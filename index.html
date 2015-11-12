@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<input type="text" />
+<script type="text/javascript">
+var prev;
+$('input').on('keyup', function(e) {
+		$.get('http://localhost:8080/stop');
+		prev  = null;
+});
+$('input').on('keydown', function(e) {
+	if (e.which == prev) return; //do not re-send the same command
+	prev = e.which;
+	switch(e.which) {
+		case 38:
+			$.get('http://localhost:8080/forward');
+		break;
+		case 39:
+			$.get('http://localhost:8080/right');
+		break;
+		case 40:
+			$.get('http://localhost:8080/reverse');
+		break;
+		case 37:
+			$.get('http://localhost:8080/left');
+		break;
+	}
+});
+</script>
+</body>
+</html>

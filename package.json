@@ -1,0 +1,16 @@
+{
+  "name": "node_robot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "robot.js",
+  "dependencies": {
+    "hapi": "^9.3.1",
+    "johnny-five": "^0.9.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

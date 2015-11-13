@@ -2,37 +2,115 @@
 <html>
 <head>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<style type="text/css">
+	body { text-align:center; font-family:"Arial"; background:#000; color:#fff; }
+	code { font-size:100px; font-family:"Arial"; color:#a33; }
+	p { color:#888; }
+	.virtual_keyboard { display:block; width:300px; height:200px; margin:0 auto; }
+	.key_up, .key_left, .key_down, .key_right { width:80px; height:80px; line-height:80px; border:0; margin:5px; background:#333; text-align:center; font-size:30px; border-radius:8px; }
+	.key_active { background:#555; color:#f66; }
+</style>
 </head>
-<body style="text-align:center">
+<body>
 <h1>Node Robot</h1>
 <p>Use your arrows to move the robot!</p>
-<code style="font-size:250px"></code>
+
+<div class="virtual_keyboard">
+	<button class="key_up">&uarr;</button><br />
+	<button class="key_left">&larr;</button>
+	<button class="key_down">&darr;</button>
+	<button class="key_right">&rarr;</button>
+</div>
+
+<code></code>
 <script type="text/javascript">
 var prev;
-$('body').on('keyup', function(e) {
+
+function _up() {
+	if (prev == 'up') return;
+	prev = 'up';
+	$('.key_up').addClass('key_active');
+	$('code').html('&uarr;');
+	$.get('http://localhost:8080/forward');
+}
+
+function _left() {
+	if (prev == 'left') return;
+	prev = 'left';
+	$('.key_left').addClass('key_active');
+	$('code').html('&larr;');
+	$.get('http://localhost:8080/left');
+}
+
+function _down() {
+	if (prev == 'down') return;
+	prev = 'down';
+	$('.key_down').addClass('key_active');
+	$('code').html('&darr;');
+	$.get('http://localhost:8080/down');
+}
+
+function _right() {
+	if (prev == 'right') return;
+	prev = 'right';
+	$('.key_right').addClass('key_active');
+	$('code').html('&rarr;');
+	$.get('http://localhost:8080/right');
+}
+
+function _stop() {
+	prev = null;
+	$('.key_active').removeClass('key_active');
 	$('code').html('');
 	$.get('http://localhost:8080/stop');
-	prev  = null;
+}
+
+
+$('.key_up').on('mousedown', function(e) {
+	e.preventDefault();
+	_up();
 });
+
+$('.key_left').on('mousedown', function(e) {
+	e.preventDefault();
+	_left();
+});
+
+$('.key_down').on('mousedown', function(e) {
+	e.preventDefault();
+	_down();
+});
+
+$('.key_right').on('mousedown', function(e) {
+	e.preventDefault();
+	_right();
+});
+
+$('.virtual_keyboard').on('mouseup', function(e) {
+	e.preventDefault();
+	_stop();
+});
+
+$('body').on('keyup', function(e) {
+	e.preventDefault();
+	_stop();
+});
+
 $('body').on('keydown', function(e) {
 	if (e.which == prev) return; //do not re-send the same command
 	prev = e.which;
 	switch(e.which) {
 		case 38:
-			$('code').html('&uarr;');
-			$.get('http://localhost:8080/forward');
-		break;
-		case 39:
-			$('code').html('&rarr;');
-			$.get('http://localhost:8080/right');
-		break;
-		case 40:
-			$('code').html('&darr;');
-			$.get('http://localhost:8080/reverse');
+			_up();
 		break;
 		case 37:
-			$('code').html('&larr;');
-			$.get('http://localhost:8080/left');
+			_left();
+		break;
+		case 40:
+			_down();
+		break;
+		case 39:
+			_right();
 		break;
 	}
 });

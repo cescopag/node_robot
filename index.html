@@ -3,28 +3,35 @@
 <head>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
-<body>
-<input type="text" />
+<body style="text-align:center">
+<h1>Node Robot</h1>
+<p>Use your arrows to move the robot!</p>
+<code style="font-size:250px"></code>
 <script type="text/javascript">
 var prev;
-$('input').on('keyup', function(e) {
-		$.get('http://localhost:8080/stop');
-		prev  = null;
+$('body').on('keyup', function(e) {
+	$('code').html('');
+	$.get('http://localhost:8080/stop');
+	prev  = null;
 });
-$('input').on('keydown', function(e) {
+$('body').on('keydown', function(e) {
 	if (e.which == prev) return; //do not re-send the same command
 	prev = e.which;
 	switch(e.which) {
 		case 38:
+			$('code').html('&uarr;');
 			$.get('http://localhost:8080/forward');
 		break;
 		case 39:
+			$('code').html('&rarr;');
 			$.get('http://localhost:8080/right');
 		break;
 		case 40:
+			$('code').html('&darr;');
 			$.get('http://localhost:8080/reverse');
 		break;
 		case 37:
+			$('code').html('&larr;');
 			$.get('http://localhost:8080/left');
 		break;
 	}

@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <style type="text/css">
+	* { -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
 	body { text-align:center; font-family:"Arial"; background:#000; color:#fff; }
 	code { font-size:100px; font-family:"Arial"; color:#a33; }
 	p { color:#888; }
@@ -66,27 +73,27 @@ function _stop() {
 }
 
 
-$('.key_up').on('mousedown', function(e) {
+$('.key_up').on('mousedown touchstart', function(e) {
 	e.preventDefault();
 	_up();
 });
 
-$('.key_left').on('mousedown', function(e) {
+$('.key_left').on('mousedown touchstart', function(e) {
 	e.preventDefault();
 	_left();
 });
 
-$('.key_down').on('mousedown', function(e) {
+$('.key_down').on('mousedown touchstart', function(e) {
 	e.preventDefault();
 	_down();
 });
 
-$('.key_right').on('mousedown', function(e) {
+$('.key_right').on('mousedown touchstart', function(e) {
 	e.preventDefault();
 	_right();
 });
 
-$('.virtual_keyboard').on('mouseup', function(e) {
+$('.virtual_keyboard').on('mouseup touchend', function(e) {
 	e.preventDefault();
 	_stop();
 });

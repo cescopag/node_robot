@@ -17,11 +17,12 @@
 	.virtual_keyboard { display:block; width:300px; height:200px; margin:0 auto; }
 	.key_up, .key_left, .key_down, .key_right { width:80px; height:80px; line-height:80px; border:0; margin:5px; background:#333; text-align:center; font-size:30px; border-radius:8px; }
 	.key_active { background:#555; color:#f66; }
-	section { padding:0px; height:100px; }
+	section { padding:0px; height:100px; display:none; }
 	section img { width:100px; }
 </style>
 </head>
 <body>
+
 <h1>Node Robot</h1>
 <p>Use your arrows to move the robot!</p>
 
@@ -36,9 +37,15 @@
 
 <section></section>
 
+<input id="addr" type="text" placeholder="local IP..." value="" />
+
 <script type="text/javascript">
-var url = 'http://localhost:8080';
 var prev;
+
+var url = 'http://localhost:8080';
+$('#addr').on('change', function() {
+	url = $(this).val() || url;
+});
 
 function _up() {
 	if (prev == 'up') return;
@@ -138,7 +145,7 @@ setInterval(function() {
 			$('code').removeClass('warning');
 		}
 	});
-}, 500);
+}, 333);
 
 </script>
 </body>

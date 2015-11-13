@@ -112,8 +112,8 @@ function start() {
 	});
 
 	new five.Proximity({
-  		controller: "PING_PULSE_IN",
-  		pin: "A0"
+  		controller: "HCSR04",
+  		pin: 10
 	});
 
 	proximity.on("data", function() {

@@ -113,7 +113,7 @@ function start() {
 
 	new five.Proximity({
   		controller: "HCSR04",
-  		pin: 10
+  		pin: 7
 	});
 
 	proximity.on("data", function() {

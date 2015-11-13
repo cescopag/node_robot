@@ -117,7 +117,8 @@ function start() {
 	});
 
 	proximity.on("data", function() {
-    	var air = this.cm;
+		//tween data...
+    	air = air + (this.cm - air) * 0.1;
   	});
 }
 

@@ -1,19 +1,24 @@
 var five = require('johnny-five');
 var board = new five.Board({ port: "/dev/rfcomm0" });
 var hapi = require('hapi');
+var nes = require('nes');
 board.on('ready', start);
 var motorA, motorB;
 var air = 0;
 
 var server = new hapi.Server();
 server.connection({
-	port: 8080
+	port: 8080,
+	routes: { cors: true }
 });
 
-server.register(require('inert'), function() {
+server.register([nes,require('inert')], function() {
+	
+	server.subscription('/radar');
 
 	server.route({
 		path: '/',
+		method:'GET',
 	    handler: function (request, reply) {
 	        reply.file('index.html');
 	    }
@@ -74,19 +79,14 @@ server.register(require('inert'), function() {
 		}
 	});
 
-	server.route({
-		method: 'GET',
-		path: '/radar',
-		handler: function(req,reply) {
-			reply(air);
-		}
-	});
-
 	server.start(function(err){
 	    if (err) {
 	        throw err;
 	    }
 	    console.log('Server running at:', server.info.uri);
+	    setInterval(function() {
+			server.broadcast(air);
+		}, 250);
 	});
 
 });
@@ -111,7 +111,7 @@ function start() {
 		}
 	});
 
-	new five.Proximity({
+	var proximity = new five.Proximity({
   		controller: "HCSR04",
   		pin: 7
 	});

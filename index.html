@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script type="text/javascript" src="https://raw.githubusercontent.com/hapijs/nes/v0.4.0/lib/client.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <style type="text/css">
 	* { -webkit-touch-callout: none;
@@ -18,10 +19,10 @@
 	section { padding:0px; height:100px; display:none; }
 	section img { width:100px; }
 
-	#range { font-size:30px; font-family:"Arial"; color:#3a3; margin:10px 0; display:block; }
+	#range { font-size:12px; font-family:"Arial"; color:#3a3; margin:10px 0; display:block; }
 	#range.warning { color:#f00; }
-	#range-meter { height:40px; background:#000; text-align:center; width:200px; margin:10px 0; }
-	#range-meter-bar { display:inline-block; height:40px; width:0; background:#fff; margin:0; }
+	#range-meter { height:20px; background:#000; text-align:center; width:200px; margin:10px auto; overflow:hidden; }
+	#range-meter-bar { display:inline-block; height:20px; width:0; background:#555; margin:0; }
 	#range-meter.warning #range-meter-bar { background:#f00; }
 </style>
 </head>
@@ -45,15 +46,10 @@
 
 <section></section>
 
-<input id="addr" type="text" placeholder="local IP..." value="" />
-
 <script type="text/javascript">
 var prev;
 
-var url = 'http://localhost:8080';
-$('#addr').on('change', function() {
-	url = $(this).val() || url;
-});
+var url = window.location.href.replace('index.html','').replace('8080/','8080');
 
 function _up() {
 	if (prev == 'up') return;
@@ -76,7 +72,7 @@ function _down() {
 	prev = 'down';
 	$('.key_down').addClass('key_active');
 	$('section').html('<img src="down.svg" />');
-	$.post(url + '/down');
+	$.post(url + '/reverse');
 }
 
 function _right() {
@@ -144,18 +140,20 @@ $('body').on('keydown', function(e) {
 	}
 });
 
-setInterval(function() {
-	$.get(url + '/radar', function(data) {
-		$('#range').html(data + " cm");
-		var width = parseFloat(data) / 500 * $('#range-meter').width();
+var client = new nes.Client(url.replace('http','ws'));
+client.connect(function (err) {
+	if (err) console.log(err);
+    client.onBroadcast = function (update) {
+		$('#range').html(update.toFixed(2) + " cm");
+		var width = parseFloat(update) / 500 * $('#range-meter').width();
 		$('#range-meter-bar').width(width);
-		if (data < 10) {
+		if (update < 50) {
 			$('#range,#range-meter').addClass('warning');
 		} else {
 			$('#range,#range-meter').removeClass('warning');
 		}
-	});
-}, 333);
+    }
+});
 
 </script>
 </body>

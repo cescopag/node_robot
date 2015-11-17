@@ -3,8 +3,9 @@ var board = new five.Board({ port: "/dev/rfcomm0" });
 var hapi = require('hapi');
 var nes = require('nes');
 board.on('ready', start);
-var motorA, motorB;
+var motorA, motorB, servo;
 var air = 0;
+isMovingForward = false;
 
 var server = new hapi.Server();
 server.connection({
@@ -31,6 +32,7 @@ server.register([nes,require('inert')], function() {
 			console.log('forward');
 			motorA && motorA.forward(255);
 			motorB && motorB.forward(255);
+			isMovingForward = true;
 			reply(200);
 		}
 	});
@@ -42,6 +44,7 @@ server.register([nes,require('inert')], function() {
 			console.log('left');
 			motorA && motorA.reverse(128);
 			motorB && motorB.forward(128);
+			isMovingForward = false;
 			reply(200);
 		}
 	});
@@ -53,6 +56,7 @@ server.register([nes,require('inert')], function() {
 			console.log('right');
 			motorA && motorA.forward(128);
 			motorB && motorB.reverse(128);
+			isMovingForward = false;
 			reply(200);
 		}
 	});
@@ -64,6 +68,7 @@ server.register([nes,require('inert')], function() {
 			console.log('reverse');
 			motorA && motorA.reverse(255);
 			motorB && motorB.reverse(255);
+			isMovingForward = false;
 			reply(200);
 		}
 	});
@@ -75,6 +80,7 @@ server.register([nes,require('inert')], function() {
 			console.log('stop');
 			motorA && motorA.stop(0);
 			motorB && motorB.stop(0);
+			isMovingForward = false;
 			reply(200);
 		}
 	});
@@ -110,6 +116,10 @@ function start() {
 			cdir: 4
 		}
 	});
+	
+	servo = new five.Servo({
+		pin: 10
+	});
 
 	var proximity = new five.Proximity({
   		controller: "HCSR04",
@@ -118,7 +128,14 @@ function start() {
 
 	proximity.on("data", function() {
 		//tween data...
-    	air = air + (this.cm - air) * 0.1;
+    	air = air + (this.cm - air) * 0.5;
+    	var degrees = air / 100 * 180;
+    	servo.to(degrees, 250);
+    	if (isMovingForward && air < 50) {
+			//stop if close to an obstacle
+			motorA.stop();
+			motorB.stop();
+		}
   	});
 }
 

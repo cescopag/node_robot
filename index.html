@@ -122,8 +122,6 @@ $('body').on('keyup', function(e) {
 });
 
 $('body').on('keydown', function(e) {
-	if (e.which == prev) return; //do not re-send the same command
-	prev = e.which;
 	switch(e.which) {
 		case 38:
 			_up();

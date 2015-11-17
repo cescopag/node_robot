@@ -21,8 +21,9 @@
 
 	#range { font-size:12px; font-family:"Arial"; color:#3a3; margin:10px 0; display:block; }
 	#range.warning { color:#f00; }
-	#range-meter { height:20px; background:#000; text-align:center; width:200px; margin:10px auto; overflow:hidden; }
-	#range-meter-bar { display:inline-block; height:20px; width:0; background:#555; margin:0; }
+	#range-meter { height:20px; background:#000; text-align:center; width:200px; margin:10px auto; overflow:hidden; border-radius:2px; }
+	#range-meter-bar { display:inline-block; height:20px; width:0; background:#555; margin:0; border-radius:2px; }
+	#range-meter.warning { background:#400; }
 	#range-meter.warning #range-meter-bar { background:#f00; }
 </style>
 </head>
@@ -44,18 +45,14 @@
 	<button class="key_right">&rarr;</button>
 </div>
 
-<section></section>
-
 <script type="text/javascript">
 var prev;
-
 var url = window.location.href.replace('index.html','').replace('8080/','8080');
 
 function _up() {
 	if (prev == 'up') return;
 	prev = 'up';
 	$('.key_up').addClass('key_active');
-	$('section').html('<img src="up.svg" />');
 	$.post(url + '/forward');
 }
 
@@ -63,7 +60,6 @@ function _left() {
 	if (prev == 'left') return;
 	prev = 'left';
 	$('.key_left').addClass('key_active');
-	$('section').html('<img src="left.svg" />');
 	$.post(url + '/left');
 }
 
@@ -71,7 +67,6 @@ function _down() {
 	if (prev == 'down') return;
 	prev = 'down';
 	$('.key_down').addClass('key_active');
-	$('section').html('<img src="down.svg" />');
 	$.post(url + '/reverse');
 }
 
@@ -79,14 +74,12 @@ function _right() {
 	if (prev == 'right') return;
 	prev = 'right';
 	$('.key_right').addClass('key_active');
-	$('section').html('<img src="right.svg" />');
 	$.post(url + '/right');
 }
 
 function _stop() {
 	prev = null;
 	$('.key_active').removeClass('key_active');
-	$('section').html('');
 	$.post(url + '/stop');
 }
 
@@ -140,7 +133,6 @@ $('body').on('keydown', function(e) {
 
 var client = new nes.Client(url.replace('http','ws'));
 client.connect(function (err) {
-	if (err) console.log(err);
     client.onBroadcast = function (update) {
 		$('#range').html(update.toFixed(2) + " cm");
 		var width = parseFloat(update) / 500 * $('#range-meter').width();
@@ -152,7 +144,6 @@ client.connect(function (err) {
 		}
     }
 });
-
 </script>
 </body>
 </html>

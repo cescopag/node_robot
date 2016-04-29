@@ -5,7 +5,7 @@
   "main": "robot.js",
   "dependencies": {
     "hapi": "^9.3.1",
-    "johnny-five": "^0.9.10",
+    "johnny-five": "^0.9.44",
     "nes": "^0.4.0",
     "socket.io": "^1.3.7"
   },

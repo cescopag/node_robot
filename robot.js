@@ -1,5 +1,5 @@
 var five = require('johnny-five');
-var board = new five.Board({ port: "/dev/rfcomm0" });
+var board = new five.Board({ port: "/dev/tty.arduino-DevB" });
 var hapi = require('hapi');
 var nes = require('nes');
 board.on('ready', start);
@@ -14,7 +14,7 @@ server.connection({
 });
 
 server.register([nes,require('inert')], function() {
-	
+
 	server.subscription('/radar');
 
 	server.route({
@@ -91,7 +91,7 @@ server.register([nes,require('inert')], function() {
 	    }
 	    console.log('Server running at:', server.info.uri);
 	    setInterval(function() {
-			server.broadcast(air);
+			server.publish('/radar', air);
 		}, 250);
 	});
 
@@ -108,7 +108,7 @@ function start() {
 			cdir: 2
 		}
 	});
-	
+
 	motorB = new five.Motor({
 		pins:{
 			pwm: 9,
@@ -116,10 +116,12 @@ function start() {
 			cdir: 4
 		}
 	});
-	
+
+    /*
 	servo = new five.Servo({
-		pin: 10
+		pin: 11
 	});
+    */
 
 	var proximity = new five.Proximity({
   		controller: "HCSR04",
@@ -129,8 +131,8 @@ function start() {
 	proximity.on("data", function() {
 		//tween data...
     	air = air + (this.cm - air) * 0.5;
-    	var degrees = air / 100 * 180;
-    	servo.to(degrees, 250);
+    	/*var degrees = air / 100 * 180;
+    	servo.to(degrees, 250);*/
     	if (isMovingForward && air < 50) {
 			//stop if close to an obstacle
 			motorA.stop();
@@ -138,4 +140,3 @@ function start() {
 		}
   	});
 }
-

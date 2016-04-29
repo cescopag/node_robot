@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<script type="text/javascript" src="https://raw.githubusercontent.com/hapijs/nes/v0.4.0/lib/client.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/nes/4.4.1/client.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <style type="text/css">
 	* { -webkit-touch-callout: none;
@@ -133,7 +133,7 @@ $('body').on('keydown', function(e) {
 
 var client = new nes.Client(url.replace('http','ws'));
 client.connect(function (err) {
-    client.onBroadcast = function (update) {
+    client.subscribe('/radar', function (update) {
 		$('#range').html(update.toFixed(2) + " cm");
 		var width = parseFloat(update) / 500 * $('#range-meter').width();
 		$('#range-meter-bar').width(width);
@@ -142,7 +142,7 @@ client.connect(function (err) {
 		} else {
 			$('#range,#range-meter').removeClass('warning');
 		}
-    }
+    });
 });
 </script>
 </body>

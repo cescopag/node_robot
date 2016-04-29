@@ -1,6 +1,7 @@
 var five = require('johnny-five');
-var board = new five.Board({ port: "/dev/rfcomm0" });
+var board = new five.Board({ port: "/dev/tty.arduino-DevB" });
 var hapi = require('hapi');
+var inert = require('inert');
 var nes = require('nes');
 board.on('ready', start);
 var motorA, motorB;
@@ -12,15 +13,21 @@ server.connection({
 	routes: { cors: true }
 });
 
-server.register([nes,require('inert')], function() {
-	
-	server.subscription('/radar');
+server.register([nes, inert], function() {
 
 	server.route({
 		path: '/',
 		method:'GET',
 	    handler: function (request, reply) {
 	        reply.file('index.html');
+	    }
+	});
+
+    server.route({
+		path: '/nes.js',
+		method:'GET',
+	    handler: function (request, reply) {
+	        reply.file('nes.js');
 	    }
 	});
 
@@ -79,14 +86,16 @@ server.register([nes,require('inert')], function() {
 		}
 	});
 
+    server.subscription('/radar');
+
 	server.start(function(err){
 	    if (err) {
 	        throw err;
 	    }
 	    console.log('Server running at:', server.info.uri);
 	    setInterval(function() {
-			server.broadcast(air);
-		}, 250);
+			server.publish('/radar', air);
+		}, 1000);
 	});
 
 });
@@ -102,7 +111,7 @@ function start() {
 			cdir: 2
 		}
 	});
-	
+
 	motorB = new five.Motor({
 		pins:{
 			pwm: 9,
@@ -121,4 +130,3 @@ function start() {
     	air = air + (this.cm - air) * 0.1;
   	});
 }
-

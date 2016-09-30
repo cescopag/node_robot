@@ -122,11 +122,13 @@ function start() {
 
 	var proximity = new five.Proximity({
   		controller: "HCSR04",
-  		pin: 7
+  		pin: 7,
+		freq: 250
 	});
 
 	proximity.on("data", function() {
 		//tween data...
-    	air = air + (this.cm - air) * 0.1;
+    	air = air + (this.cm - air) * 0.25;
+		console.log(air);
   	});
 }

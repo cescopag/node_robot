@@ -1,0 +1,890 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   'serialport2' ]
+2 info using npm@2.14.12
+3 info using node@v4.2.4
+4 verbose install initial load of /Users/francesco/DEV/ROBOT/node_robot/package.json
+5 warn package.json node_robot@1.0.0 No repository field.
+6 verbose installManyTop reading scoped package data from /Users/francesco/DEV/ROBOT/node_robot/node_modules/hapi/package.json
+7 verbose installManyTop reading scoped package data from /Users/francesco/DEV/ROBOT/node_robot/node_modules/inert/package.json
+8 verbose installManyTop reading scoped package data from /Users/francesco/DEV/ROBOT/node_robot/node_modules/johnny-five/package.json
+9 verbose installManyTop reading scoped package data from /Users/francesco/DEV/ROBOT/node_robot/node_modules/nes/package.json
+10 verbose installManyTop reading scoped package data from /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport/package.json
+11 verbose installManyTop reading scoped package data from /Users/francesco/DEV/ROBOT/node_robot/node_modules/socket.io/package.json
+12 verbose installManyTop reading scoped package data from /Users/francesco/DEV/ROBOT/node_robot/node_modules/sockjs/package.json
+13 verbose readDependencies loading dependencies from /Users/francesco/DEV/ROBOT/node_robot/package.json
+14 silly cache add args [ 'serialport2', null ]
+15 verbose cache add spec serialport2
+16 silly cache add parsed spec Result {
+16 silly cache add   raw: 'serialport2',
+16 silly cache add   scope: null,
+16 silly cache add   name: 'serialport2',
+16 silly cache add   rawSpec: '',
+16 silly cache add   spec: 'latest',
+16 silly cache add   type: 'tag' }
+17 silly addNamed serialport2@latest
+18 verbose addNamed "latest" is being treated as a dist-tag for serialport2
+19 info addNameTag [ 'serialport2', 'latest' ]
+20 silly mapToRegistry name serialport2
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry uri https://registry.npmjs.org/serialport2
+24 verbose addNameTag registry:https://registry.npmjs.org/serialport2 not in flight; fetching
+25 verbose request uri https://registry.npmjs.org/serialport2
+26 verbose request no auth needed
+27 info attempt registry request try #1 at 16:29:00
+28 verbose request id 319fd70a647a9c77
+29 verbose etag "1QTVWBAEXZPKU8B7IXQUDHKUP"
+30 http request GET https://registry.npmjs.org/serialport2
+31 http 304 https://registry.npmjs.org/serialport2
+32 verbose headers { date: 'Tue, 04 Oct 2016 14:29:00 GMT',
+32 verbose headers   via: '1.1 varnish',
+32 verbose headers   'cache-control': 'max-age=300',
+32 verbose headers   etag: '"1QTVWBAEXZPKU8B7IXQUDHKUP"',
+32 verbose headers   age: '43',
+32 verbose headers   connection: 'keep-alive',
+32 verbose headers   'x-served-by': 'cache-fra1224-FRA',
+32 verbose headers   'x-cache': 'HIT',
+32 verbose headers   'x-cache-hits': '1',
+32 verbose headers   'x-timer': 'S1475591340.528035,VS0,VE0',
+32 verbose headers   vary: 'Accept-Encoding' }
+33 silly get cb [ 304,
+33 silly get   { date: 'Tue, 04 Oct 2016 14:29:00 GMT',
+33 silly get     via: '1.1 varnish',
+33 silly get     'cache-control': 'max-age=300',
+33 silly get     etag: '"1QTVWBAEXZPKU8B7IXQUDHKUP"',
+33 silly get     age: '43',
+33 silly get     connection: 'keep-alive',
+33 silly get     'x-served-by': 'cache-fra1224-FRA',
+33 silly get     'x-cache': 'HIT',
+33 silly get     'x-cache-hits': '1',
+33 silly get     'x-timer': 'S1475591340.528035,VS0,VE0',
+33 silly get     vary: 'Accept-Encoding' } ]
+34 verbose etag https://registry.npmjs.org/serialport2 from cache
+35 verbose get saving serialport2 to /Users/francesco/.npm/registry.npmjs.org/serialport2/.cache.json
+36 silly addNameTag next cb for serialport2 with tag latest
+37 silly addNamed serialport2@0.0.5
+38 verbose addNamed "0.0.5" is a plain semver version for serialport2
+39 warn deprecated serialport2@0.0.5: Development has moved to serialport
+40 silly cache afterAdd serialport2@0.0.5
+41 verbose afterAdd /Users/francesco/.npm/serialport2/0.0.5/package/package.json not in flight; writing
+42 verbose afterAdd /Users/francesco/.npm/serialport2/0.0.5/package/package.json written
+43 silly install resolved [ { name: 'serialport2',
+43 silly install resolved     description: 'node.js serial port driver.',
+43 silly install resolved     author: { name: 'Joe Ferner', email: 'joe.ferner@nearinfinity.com' },
+43 silly install resolved     keywords: [ 'serial', 'serialport', 'com', 'comport', 'arduino' ],
+43 silly install resolved     version: '0.0.5',
+43 silly install resolved     engines: { node: '>=0.6.0' },
+43 silly install resolved     maintainers: [ [Object] ],
+43 silly install resolved     bugs: { url: 'https://github.com/joeferner/node-serialport2/issues' },
+43 silly install resolved     license: 'MIT',
+43 silly install resolved     repository:
+43 silly install resolved      { type: 'git',
+43 silly install resolved        url: 'git://github.com/joeferner/node-serialport2.git' },
+43 silly install resolved     dependencies:
+43 silly install resolved      { bindings: '0.3.0',
+43 silly install resolved        async: '0.1.18',
+43 silly install resolved        sf: '0.1.3',
+43 silly install resolved        optimist: '~0.3.4' },
+43 silly install resolved     devDependencies: { nodeunit: '~0.7.4' },
+43 silly install resolved     scripts: { test: 'node ./node_modules/nodeunit/bin/nodeunit test' },
+43 silly install resolved     main: './index.js',
+43 silly install resolved     bin:
+43 silly install resolved      { serialportlist: './bin/serialportList.js',
+43 silly install resolved        serialportterm: './bin/serialportTerminal.js' },
+43 silly install resolved     _npmUser: { name: 'joeferner', email: 'joe@fernsroth.com' },
+43 silly install resolved     _id: 'serialport2@0.0.5',
+43 silly install resolved     _engineSupported: true,
+43 silly install resolved     _npmVersion: '1.1.0-alpha-6',
+43 silly install resolved     _nodeVersion: 'v0.7.8',
+43 silly install resolved     _defaultsLoaded: true,
+43 silly install resolved     dist:
+43 silly install resolved      { shasum: 'd74af5ad22e77518c40aa9f5c58586df0d38fe17',
+43 silly install resolved        tarball: 'https://registry.npmjs.org/serialport2/-/serialport2-0.0.5.tgz' },
+43 silly install resolved     deprecated: 'Development has moved to serialport',
+43 silly install resolved     directories: {},
+43 silly install resolved     _shasum: 'd74af5ad22e77518c40aa9f5c58586df0d38fe17',
+43 silly install resolved     _resolved: 'https://registry.npmjs.org/serialport2/-/serialport2-0.0.5.tgz',
+43 silly install resolved     _from: 'serialport2@latest',
+43 silly install resolved     readme: 'ERROR: No README data found!',
+43 silly install resolved     homepage: 'https://github.com/joeferner/node-serialport2#readme' } ]
+44 info install serialport2@0.0.5 into /Users/francesco/DEV/ROBOT/node_robot
+45 info installOne serialport2@0.0.5
+46 verbose installOne of serialport2 to /Users/francesco/DEV/ROBOT/node_robot not in flight; installing
+47 verbose lock using /Users/francesco/.npm/_locks/serialport2-561caead11610f33.lock for /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2
+48 silly install write writing serialport2 0.0.5 to /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2
+49 verbose unbuild node_modules/serialport2
+50 silly gentlyRm /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2 is being purged from base /Users/francesco/DEV/ROBOT/node_robot
+51 verbose gentlyRm don't care about contents; nuking /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2
+52 verbose tar unpack /Users/francesco/.npm/serialport2/0.0.5/package.tgz
+53 verbose tar unpacking to /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2
+54 silly gentlyRm /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2 is being purged
+55 verbose gentlyRm don't care about contents; nuking /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2
+56 silly gunzTarPerm modes [ '755', '644' ]
+57 silly gunzTarPerm extractEntry lib/
+58 silly gunzTarPerm extractEntry lib/serialport.js
+59 silly gunzTarPerm extractEntry test/
+60 silly gunzTarPerm extractEntry test/arduinioEcho/
+61 silly gunzTarPerm extractEntry test/arduinioEcho/arduinioEcho.ino
+62 silly gunzTarPerm extractEntry test/echoTest.js
+63 silly gunzTarPerm extractEntry .idea/
+64 silly gunzTarPerm extractEntry .idea/node-serialport2.iml
+65 silly gunzTarPerm extractEntry .idea/misc.xml
+66 silly gunzTarPerm extractEntry .idea/vcs.xml
+67 silly gunzTarPerm extractEntry .idea/workspace.xml
+68 silly gunzTarPerm extractEntry .idea/.name
+69 silly gunzTarPerm extractEntry .idea/modules.xml
+70 silly gunzTarPerm extractEntry .idea/encodings.xml
+71 silly gunzTarPerm extractEntry .idea/scopes/
+72 silly gunzTarPerm extractEntry .idea/scopes/scope_settings.xml
+73 silly gunzTarPerm extractEntry binding.gyp
+74 silly gunzTarPerm extractEntry src/
+75 silly gunzTarPerm extractEntry src/serialport.cpp
+76 silly gunzTarPerm extractEntry src/win/
+77 silly gunzTarPerm extractEntry src/win/disphelper.h
+78 silly gunzTarPerm extractEntry src/win/disphelper.c
+79 silly gunzTarPerm extractEntry src/serialport_unix.cpp
+80 silly gunzTarPerm extractEntry src/serialport.h
+81 silly gunzTarPerm extractEntry src/serialport_win.cpp
+82 silly gunzTarPerm extractEntry .gitignore
+83 silly gunzTarPerm extractEntry index.js
+84 silly gunzTarPerm extractEntry bin/
+85 silly gunzTarPerm extractEntry bin/serialportList.js
+86 silly gunzTarPerm extractEntry bin/serialportTerminal.js
+87 silly gunzTarPerm extractEntry package.json
+88 silly gunzTarPerm extractEntry README.md
+89 verbose write writing to /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/package.json
+90 info preinstall serialport2@0.0.5
+91 verbose readDependencies loading dependencies from /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/package.json
+92 silly prepareForInstallMany adding bindings@0.3.0 from serialport2 dependencies
+93 silly prepareForInstallMany adding async@0.1.18 from serialport2 dependencies
+94 silly prepareForInstallMany adding sf@0.1.3 from serialport2 dependencies
+95 silly prepareForInstallMany adding optimist@~0.3.4 from serialport2 dependencies
+96 verbose readDependencies loading dependencies from /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/package.json
+97 silly cache add args [ 'async@0.1.18', null ]
+98 verbose cache add spec async@0.1.18
+99 silly cache add parsed spec Result {
+99 silly cache add   raw: 'async@0.1.18',
+99 silly cache add   scope: null,
+99 silly cache add   name: 'async',
+99 silly cache add   rawSpec: '0.1.18',
+99 silly cache add   spec: '0.1.18',
+99 silly cache add   type: 'version' }
+100 silly addNamed async@0.1.18
+101 verbose addNamed "0.1.18" is a plain semver version for async
+102 silly mapToRegistry name async
+103 silly mapToRegistry using default registry
+104 silly mapToRegistry registry https://registry.npmjs.org/
+105 silly mapToRegistry uri https://registry.npmjs.org/async
+106 verbose addNameVersion registry:https://registry.npmjs.org/async not in flight; fetching
+107 silly cache add args [ 'sf@0.1.3', null ]
+108 verbose cache add spec sf@0.1.3
+109 silly cache add parsed spec Result {
+109 silly cache add   raw: 'sf@0.1.3',
+109 silly cache add   scope: null,
+109 silly cache add   name: 'sf',
+109 silly cache add   rawSpec: '0.1.3',
+109 silly cache add   spec: '0.1.3',
+109 silly cache add   type: 'version' }
+110 silly addNamed sf@0.1.3
+111 verbose addNamed "0.1.3" is a plain semver version for sf
+112 silly mapToRegistry name sf
+113 silly mapToRegistry using default registry
+114 silly mapToRegistry registry https://registry.npmjs.org/
+115 silly mapToRegistry uri https://registry.npmjs.org/sf
+116 verbose addNameVersion registry:https://registry.npmjs.org/sf not in flight; fetching
+117 silly cache add args [ 'optimist@~0.3.4', null ]
+118 verbose cache add spec optimist@~0.3.4
+119 silly cache add parsed spec Result {
+119 silly cache add   raw: 'optimist@~0.3.4',
+119 silly cache add   scope: null,
+119 silly cache add   name: 'optimist',
+119 silly cache add   rawSpec: '~0.3.4',
+119 silly cache add   spec: '>=0.3.4 <0.4.0',
+119 silly cache add   type: 'range' }
+120 silly addNamed optimist@>=0.3.4 <0.4.0
+121 verbose addNamed ">=0.3.4 <0.4.0" is a valid semver range for optimist
+122 silly addNameRange { name: 'optimist', range: '>=0.3.4 <0.4.0', hasData: false }
+123 silly mapToRegistry name optimist
+124 silly mapToRegistry using default registry
+125 silly mapToRegistry registry https://registry.npmjs.org/
+126 silly mapToRegistry uri https://registry.npmjs.org/optimist
+127 verbose addNameRange registry:https://registry.npmjs.org/optimist not in flight; fetching
+128 silly cache add args [ 'bindings@0.3.0', null ]
+129 verbose cache add spec bindings@0.3.0
+130 silly cache add parsed spec Result {
+130 silly cache add   raw: 'bindings@0.3.0',
+130 silly cache add   scope: null,
+130 silly cache add   name: 'bindings',
+130 silly cache add   rawSpec: '0.3.0',
+130 silly cache add   spec: '0.3.0',
+130 silly cache add   type: 'version' }
+131 silly addNamed bindings@0.3.0
+132 verbose addNamed "0.3.0" is a plain semver version for bindings
+133 silly mapToRegistry name bindings
+134 silly mapToRegistry using default registry
+135 silly mapToRegistry registry https://registry.npmjs.org/
+136 silly mapToRegistry uri https://registry.npmjs.org/bindings
+137 verbose addNameVersion registry:https://registry.npmjs.org/bindings not in flight; fetching
+138 verbose request uri https://registry.npmjs.org/sf
+139 verbose request no auth needed
+140 info attempt registry request try #1 at 16:29:00
+141 verbose etag "18YCYRQVZMFUSUJEQ9LVIUD85"
+142 http request GET https://registry.npmjs.org/sf
+143 verbose request uri https://registry.npmjs.org/optimist
+144 verbose request no auth needed
+145 info attempt registry request try #1 at 16:29:00
+146 verbose etag "204HWFUA0ZG7LLFETZYH36OY4"
+147 http request GET https://registry.npmjs.org/optimist
+148 verbose request uri https://registry.npmjs.org/bindings
+149 verbose request no auth needed
+150 info attempt registry request try #1 at 16:29:00
+151 verbose etag "C1AW6UVQGY4VZQGFC1WTIGMDV"
+152 http request GET https://registry.npmjs.org/bindings
+153 verbose request uri https://registry.npmjs.org/async
+154 verbose request no auth needed
+155 info attempt registry request try #1 at 16:29:00
+156 verbose etag "6ZL2BCNSGR4RX8L2YCGJK7IKA"
+157 http request GET https://registry.npmjs.org/async
+158 http 304 https://registry.npmjs.org/sf
+159 verbose headers { date: 'Tue, 04 Oct 2016 14:29:00 GMT',
+159 verbose headers   via: '1.1 varnish',
+159 verbose headers   'cache-control': 'max-age=300',
+159 verbose headers   etag: '"18YCYRQVZMFUSUJEQ9LVIUD85"',
+159 verbose headers   age: '205',
+159 verbose headers   connection: 'keep-alive',
+159 verbose headers   'x-served-by': 'cache-fra1224-FRA',
+159 verbose headers   'x-cache': 'HIT',
+159 verbose headers   'x-cache-hits': '11',
+159 verbose headers   'x-timer': 'S1475591340.774245,VS0,VE0',
+159 verbose headers   vary: 'Accept-Encoding' }
+160 silly get cb [ 304,
+160 silly get   { date: 'Tue, 04 Oct 2016 14:29:00 GMT',
+160 silly get     via: '1.1 varnish',
+160 silly get     'cache-control': 'max-age=300',
+160 silly get     etag: '"18YCYRQVZMFUSUJEQ9LVIUD85"',
+160 silly get     age: '205',
+160 silly get     connection: 'keep-alive',
+160 silly get     'x-served-by': 'cache-fra1224-FRA',
+160 silly get     'x-cache': 'HIT',
+160 silly get     'x-cache-hits': '11',
+160 silly get     'x-timer': 'S1475591340.774245,VS0,VE0',
+160 silly get     vary: 'Accept-Encoding' } ]
+161 verbose etag https://registry.npmjs.org/sf from cache
+162 verbose get saving sf to /Users/francesco/.npm/registry.npmjs.org/sf/.cache.json
+163 http 304 https://registry.npmjs.org/optimist
+164 verbose headers { date: 'Tue, 04 Oct 2016 14:29:00 GMT',
+164 verbose headers   via: '1.1 varnish',
+164 verbose headers   'cache-control': 'max-age=300',
+164 verbose headers   etag: '"204HWFUA0ZG7LLFETZYH36OY4"',
+164 verbose headers   age: '187',
+164 verbose headers   connection: 'keep-alive',
+164 verbose headers   'x-served-by': 'cache-fra1249-FRA',
+164 verbose headers   'x-cache': 'HIT',
+164 verbose headers   'x-cache-hits': '9',
+164 verbose headers   'x-timer': 'S1475591340.775830,VS0,VE0',
+164 verbose headers   vary: 'Accept-Encoding' }
+165 silly get cb [ 304,
+165 silly get   { date: 'Tue, 04 Oct 2016 14:29:00 GMT',
+165 silly get     via: '1.1 varnish',
+165 silly get     'cache-control': 'max-age=300',
+165 silly get     etag: '"204HWFUA0ZG7LLFETZYH36OY4"',
+165 silly get     age: '187',
+165 silly get     connection: 'keep-alive',
+165 silly get     'x-served-by': 'cache-fra1249-FRA',
+165 silly get     'x-cache': 'HIT',
+165 silly get     'x-cache-hits': '9',
+165 silly get     'x-timer': 'S1475591340.775830,VS0,VE0',
+165 silly get     vary: 'Accept-Encoding' } ]
+166 verbose etag https://registry.npmjs.org/optimist from cache
+167 verbose get saving optimist to /Users/francesco/.npm/registry.npmjs.org/optimist/.cache.json
+168 silly addNameRange number 2 { name: 'optimist', range: '>=0.3.4 <0.4.0', hasData: true }
+169 silly addNameRange versions [ 'optimist',
+169 silly addNameRange   [ '0.0.1',
+169 silly addNameRange     '0.0.2',
+169 silly addNameRange     '0.0.4',
+169 silly addNameRange     '0.0.5',
+169 silly addNameRange     '0.0.6',
+169 silly addNameRange     '0.0.7',
+169 silly addNameRange     '0.1.0',
+169 silly addNameRange     '0.1.1',
+169 silly addNameRange     '0.1.2',
+169 silly addNameRange     '0.1.3',
+169 silly addNameRange     '0.1.4',
+169 silly addNameRange     '0.1.5',
+169 silly addNameRange     '0.1.6',
+169 silly addNameRange     '0.1.7',
+169 silly addNameRange     '0.1.8',
+169 silly addNameRange     '0.1.9',
+169 silly addNameRange     '0.0.3',
+169 silly addNameRange     '0.2.0',
+169 silly addNameRange     '0.2.1',
+169 silly addNameRange     '0.2.2',
+169 silly addNameRange     '0.2.3',
+169 silly addNameRange     '0.2.4',
+169 silly addNameRange     '0.2.5',
+169 silly addNameRange     '0.2.6',
+169 silly addNameRange     '0.2.7',
+169 silly addNameRange     '0.2.8',
+169 silly addNameRange     '0.3.0',
+169 silly addNameRange     '0.3.1',
+169 silly addNameRange     '0.3.3',
+169 silly addNameRange     '0.3.4',
+169 silly addNameRange     '0.3.5',
+169 silly addNameRange     '0.3.6',
+169 silly addNameRange     '0.3.7',
+169 silly addNameRange     '0.4.0',
+169 silly addNameRange     '0.5.0',
+169 silly addNameRange     '0.5.1',
+169 silly addNameRange     '0.5.2',
+169 silly addNameRange     '0.6.0',
+169 silly addNameRange     '0.6.1' ] ]
+170 silly addNamed optimist@0.3.7
+171 verbose addNamed "0.3.7" is a plain semver version for optimist
+172 http 304 https://registry.npmjs.org/async
+173 verbose headers { date: 'Tue, 04 Oct 2016 14:29:00 GMT',
+173 verbose headers   via: '1.1 varnish',
+173 verbose headers   'cache-control': 'max-age=300',
+173 verbose headers   etag: '"6ZL2BCNSGR4RX8L2YCGJK7IKA"',
+173 verbose headers   age: '290',
+173 verbose headers   connection: 'keep-alive',
+173 verbose headers   'x-served-by': 'cache-fra1225-FRA',
+173 verbose headers   'x-cache': 'HIT',
+173 verbose headers   'x-cache-hits': '49',
+173 verbose headers   'x-timer': 'S1475591340.774046,VS0,VE0',
+173 verbose headers   vary: 'Accept-Encoding' }
+174 silly get cb [ 304,
+174 silly get   { date: 'Tue, 04 Oct 2016 14:29:00 GMT',
+174 silly get     via: '1.1 varnish',
+174 silly get     'cache-control': 'max-age=300',
+174 silly get     etag: '"6ZL2BCNSGR4RX8L2YCGJK7IKA"',
+174 silly get     age: '290',
+174 silly get     connection: 'keep-alive',
+174 silly get     'x-served-by': 'cache-fra1225-FRA',
+174 silly get     'x-cache': 'HIT',
+174 silly get     'x-cache-hits': '49',
+174 silly get     'x-timer': 'S1475591340.774046,VS0,VE0',
+174 silly get     vary: 'Accept-Encoding' } ]
+175 verbose etag https://registry.npmjs.org/async from cache
+176 verbose get saving async to /Users/francesco/.npm/registry.npmjs.org/async/.cache.json
+177 http 304 https://registry.npmjs.org/bindings
+178 verbose headers { date: 'Tue, 04 Oct 2016 14:29:00 GMT',
+178 verbose headers   via: '1.1 varnish',
+178 verbose headers   'cache-control': 'max-age=300',
+178 verbose headers   etag: '"C1AW6UVQGY4VZQGFC1WTIGMDV"',
+178 verbose headers   age: '147',
+178 verbose headers   connection: 'keep-alive',
+178 verbose headers   'x-served-by': 'cache-fra1238-FRA',
+178 verbose headers   'x-cache': 'HIT',
+178 verbose headers   'x-cache-hits': '4',
+178 verbose headers   'x-timer': 'S1475591340.777050,VS0,VE0',
+178 verbose headers   vary: 'Accept-Encoding' }
+179 silly get cb [ 304,
+179 silly get   { date: 'Tue, 04 Oct 2016 14:29:00 GMT',
+179 silly get     via: '1.1 varnish',
+179 silly get     'cache-control': 'max-age=300',
+179 silly get     etag: '"C1AW6UVQGY4VZQGFC1WTIGMDV"',
+179 silly get     age: '147',
+179 silly get     connection: 'keep-alive',
+179 silly get     'x-served-by': 'cache-fra1238-FRA',
+179 silly get     'x-cache': 'HIT',
+179 silly get     'x-cache-hits': '4',
+179 silly get     'x-timer': 'S1475591340.777050,VS0,VE0',
+179 silly get     vary: 'Accept-Encoding' } ]
+180 verbose etag https://registry.npmjs.org/bindings from cache
+181 verbose get saving bindings to /Users/francesco/.npm/registry.npmjs.org/bindings/.cache.json
+182 silly cache afterAdd sf@0.1.3
+183 verbose afterAdd /Users/francesco/.npm/sf/0.1.3/package/package.json not in flight; writing
+184 silly cache afterAdd optimist@0.3.7
+185 verbose afterAdd /Users/francesco/.npm/optimist/0.3.7/package/package.json not in flight; writing
+186 verbose afterAdd /Users/francesco/.npm/sf/0.1.3/package/package.json written
+187 verbose afterAdd /Users/francesco/.npm/optimist/0.3.7/package/package.json written
+188 silly cache afterAdd bindings@0.3.0
+189 verbose afterAdd /Users/francesco/.npm/bindings/0.3.0/package/package.json not in flight; writing
+190 silly cache afterAdd async@0.1.18
+191 verbose afterAdd /Users/francesco/.npm/async/0.1.18/package/package.json not in flight; writing
+192 verbose afterAdd /Users/francesco/.npm/bindings/0.3.0/package/package.json written
+193 verbose afterAdd /Users/francesco/.npm/async/0.1.18/package/package.json written
+194 silly install resolved [ { name: 'sf',
+194 silly install resolved     description: 'String formatting library for node.js',
+194 silly install resolved     author: { name: 'Joe Ferner', email: 'joe.ferner@nearinfinity.com' },
+194 silly install resolved     keywords: [ 'string', 'format', 'template' ],
+194 silly install resolved     version: '0.1.3',
+194 silly install resolved     engines: { node: '>=0.6.0' },
+194 silly install resolved     maintainers: [ [Object] ],
+194 silly install resolved     bugs: { url: 'https://github.com/nearinfinity/node-sf/issues' },
+194 silly install resolved     license: 'MIT',
+194 silly install resolved     repository:
+194 silly install resolved      { type: 'git',
+194 silly install resolved        url: 'git://github.com/nearinfinity/node-sf.git' },
+194 silly install resolved     devDependencies: { nodeunit: '~0.7.3' },
+194 silly install resolved     scripts: { test: 'nodeunit test' },
+194 silly install resolved     main: './index.js',
+194 silly install resolved     _npmUser: { name: 'joeferner', email: 'joe@fernsroth.com' },
+194 silly install resolved     _id: 'sf@0.1.3',
+194 silly install resolved     dependencies: {},
+194 silly install resolved     optionalDependencies: {},
+194 silly install resolved     _engineSupported: true,
+194 silly install resolved     _npmVersion: '1.1.4',
+194 silly install resolved     _nodeVersion: 'v0.7.7',
+194 silly install resolved     _defaultsLoaded: true,
+194 silly install resolved     dist:
+194 silly install resolved      { shasum: 'a5d246148241ace3788447f6a9a95b564762c354',
+194 silly install resolved        tarball: 'https://registry.npmjs.org/sf/-/sf-0.1.3.tgz' },
+194 silly install resolved     directories: {},
+194 silly install resolved     _shasum: 'a5d246148241ace3788447f6a9a95b564762c354',
+194 silly install resolved     _resolved: 'https://registry.npmjs.org/sf/-/sf-0.1.3.tgz',
+194 silly install resolved     _from: 'sf@0.1.3',
+194 silly install resolved     readme: 'ERROR: No README data found!',
+194 silly install resolved     homepage: 'https://github.com/nearinfinity/node-sf#readme' },
+194 silly install resolved   { name: 'optimist',
+194 silly install resolved     version: '0.3.7',
+194 silly install resolved     description: 'Light-weight option parsing with an argv hash. No optstrings attached.',
+194 silly install resolved     main: './index.js',
+194 silly install resolved     dependencies: { wordwrap: '~0.0.2' },
+194 silly install resolved     devDependencies: { hashish: '~0.0.4', tap: '~0.4.0' },
+194 silly install resolved     scripts: { test: 'tap ./test/*.js' },
+194 silly install resolved     repository:
+194 silly install resolved      { type: 'git',
+194 silly install resolved        url: 'git+ssh://git@github.com/substack/node-optimist.git' },
+194 silly install resolved     keywords:
+194 silly install resolved      [ 'argument',
+194 silly install resolved        'args',
+194 silly install resolved        'option',
+194 silly install resolved        'parser',
+194 silly install resolved        'parsing',
+194 silly install resolved        'cli',
+194 silly install resolved        'command' ],
+194 silly install resolved     author:
+194 silly install resolved      { name: 'James Halliday',
+194 silly install resolved        email: 'mail@substack.net',
+194 silly install resolved        url: 'http://substack.net' },
+194 silly install resolved     license: 'MIT/X11',
+194 silly install resolved     engine: { node: '>=0.4' },
+194 silly install resolved     readme: 'optimist\n========\n\nOptimist is a node.js library for option parsing for people who hate option\nparsing. More specifically, this module is for people who like all the --bells\nand -whistlz of program usage but think optstrings are a waste of time.\n\nWith optimist, option parsing doesn\'t have to suck (as much).\n\n[![build status](https://secure.travis-ci.org/substack/node-optimist.png)](http://travis-ci.org/substack/node-optimist)\n\nexamples\n========\n\nWith Optimist, the options are just a hash! No optstrings attached.\n-------------------------------------------------------------------\n\nxup.js:\n\n````javascript\n#!/usr/bin/env node\nvar argv = require(\'optimist\').argv;\n\nif (argv.rif - 5 * argv.xup > 7.138) {\n    console.log(\'Buy more riffiwobbles\');\n}\nelse {\n    console.log(\'Sell the xupptumblers\');\n}\n````\n\n***\n\n    $ ./xup.js --rif=55 --xup=9.52\n    Buy more riffiwobbles\n    \n    $ ./xup.js --rif 12 --xup 8.1\n    Sell the xupptumblers\n\n![This one\'s optimistic.](http://substack.net/images/optimistic.png)\n\nBut wait! There\'s more! You can do short options:\n-------------------------------------------------\n \nshort.js:\n\n````javascript\n#!/usr/bin/env node\nvar argv = require(\'optimist\').argv;\nconsole.log(\'(%d,%d)\', argv.x, argv.y);\n````\n\n***\n\n    $ ./short.js -x 10 -y 21\n    (10,21)\n\nAnd booleans, both long and short (and grouped):\n----------------------------------\n\nbool.js:\n\n````javascript\n#!/usr/bin/env node\nvar util = require(\'util\');\nvar argv = require(\'optimist\').argv;\n\nif (argv.s) {\n    util.print(argv.fr ? \'Le chat dit: \' : \'The cat says: \');\n}\nconsole.log(\n    (argv.fr ? \'miaou\' : \'meow\') + (argv.p ? \'.\' : \'\')\n);\n````\n\n***\n\n    $ ./bool.js -s\n    The cat says: meow\n    \n    $ ./bool.js -sp\n    The cat says: meow.\n\n    $ ./bool.js -sp --fr\n    Le chat dit: miaou.\n\nAnd non-hypenated options too! Just use `argv._`!\n-------------------------------------------------\n \nnonopt.js:\n\n````javascript\n#!/usr/bin/env node\nvar argv = require(\'optimist\').argv;\nconsole.log(\'(%d,%d)\', argv.x, argv.y);\nconsole.log(argv._);\n````\n\n***\n\n    $ ./nonopt.js -x 6.82 -y 3.35 moo\n    (6.82,3.35)\n    [ \'moo\' ]\n    \n    $ ./nonopt.js foo -x 0.54 bar -y 1.12 baz\n    (0.54,1.12)\n    [ \'foo\', \'bar\', \'baz\' ]\n\nPlus, Optimist comes with .usage() and .demand()!\n-------------------------------------------------\n\ndivide.js:\n\n````javascript\n#!/usr/bin/env node\nvar argv = require(\'optimist\')\n    .usage(\'Usage: $0 -x [num] -y [num]\')\n    .demand([\'x\',\'y\'])\n    .argv;\n\nconsole.log(argv.x / argv.y);\n````\n\n***\n \n    $ ./divide.js -x 55 -y 11\n    5\n    \n    $ node ./divide.js -x 4.91 -z 2.51\n    Usage: node ./divide.js -x [num] -y [num]\n\n    Options:\n      -x  [required]\n      -y  [required]\n\n    Missing required arguments: y\n\nEVEN MORE HOLY COW\n------------------\n\ndefault_singles.js:\n\n````javascript\n#!/usr/bin/env node\nvar argv = require(\'optimist\')\n    .default(\'x\', 10)\n    .default(\'y\', 10)\n    .argv\n;\nconsole.log(argv.x + argv.y);\n````\n\n***\n\n    $ ./default_singles.js -x 5\n    15\n\ndefault_hash.js:\n\n````javascript\n#!/usr/bin/env node\nvar argv = require(\'optimist\')\n    .default({ x : 10, y : 10 })\n    .argv\n;\nconsole.log(argv.x + argv.y);\n````\n\n***\n\n    $ ./default_hash.js -y 7\n    17\n\nAnd if you really want to get all descriptive about it...\n---------------------------------------------------------\n\nboolean_single.js\n\n````javascript\n#!/usr/bin/env node\nvar argv = require(\'optimist\')\n    .boolean(\'v\')\n    .argv\n;\nconsole.dir(argv);\n````\n\n***\n\n    $ ./boolean_single.js -v foo bar baz\n    true\n    [ \'bar\', \'baz\', \'foo\' ]\n\nboolean_double.js\n\n````javascript\n#!/usr/bin/env node\nvar argv = require(\'optimist\')\n    .boolean([\'x\',\'y\',\'z\'])\n    .argv\n;\nconsole.dir([ argv.x, argv.y, argv.z ]);\nconsole.dir(argv._);\n````\n\n***\n\n    $ ./boolean_double.js -x -z one two three\n    [ true, false, true ]\n    [ \'one\', \'two\', \'three\' ]\n\nOptimist is here to help...\n---------------------------\n\nYou can describe parameters for help messages and set aliases. Optimist figures\nout how to format a handy help string automatically.\n\nline_count.js\n\n````javascript\n#!/usr/bin/env node\nvar argv = require(\'optimist\')\n    .usage(\'Count the lines in a file.\\nUsage: $0\')\n    .demand(\'f\')\n    .alias(\'f\', \'file\')\n    .describe(\'f\', \'Load a file\')\n    .argv\n;\n\nvar fs = require(\'fs\');\nvar s = fs.createReadStream(argv.file);\n\nvar lines = 0;\ns.on(\'data\', function (buf) {\n    lines += buf.toString().match(/\\n/g).length;\n});\n\ns.on(\'end\', function () {\n    console.log(lines);\n});\n````\n\n***\n\n    $ node line_count.js\n    Count the lines in a file.\n    Usage: node ./line_count.js\n\n    Options:\n      -f, --file  Load a file  [required]\n\n    Missing required arguments: f\n\n    $ node line_count.js --file line_count.js \n    20\n    \n    $ node line_count.js -f line_count.js \n    20\n\nmethods\n=======\n\nBy itself,\n\n````javascript\nrequire(\'optimist\').argv\n`````\n\nwill use `process.argv` array to construct the `argv` object.\n\nYou can pass in the `process.argv` yourself:\n\n````javascript\nrequire(\'optimist\')([ \'-x\', \'1\', \'-y\', \'2\' ]).argv\n````\n\nor use .parse() to do the same thing:\n\n````javascript\nrequire(\'optimist\').parse([ \'-x\', \'1\', \'-y\', \'2\' ])\n````\n\nThe rest of these methods below come in just before the terminating `.argv`.\n\n.alias(key, alias)\n------------------\n\nSet key names as equivalent such that updates to a key will propagate to aliases\nand vice-versa.\n\nOptionally `.alias()` can take an object that maps keys to aliases.\n\n.default(key, value)\n--------------------\n\nSet `argv[key]` to `value` if no option was specified on `process.argv`.\n\nOptionally `.default()` can take an object that maps keys to default values.\n\n.demand(key)\n------------\n\nIf `key` is a string, show the usage information and exit if `key` wasn\'t\nspecified in `process.argv`.\n\nIf `key` is a number, demand at least as many non-option arguments, which show\nup in `argv._`.\n\nIf `key` is an Array, demand each element.\n\n.describe(key, desc)\n--------------------\n\nDescribe a `key` for the generated usage information.\n\nOptionally `.describe()` can take an object that maps keys to descriptions.\n\n.options(key, opt)\n------------------\n\nInstead of chaining together `.alias().demand().default()`, you can specify\nkeys in `opt` for each of the chainable methods.\n\nFor example:\n\n````javascript\nvar argv = require(\'optimist\')\n    .options(\'f\', {\n        alias : \'file\',\n        default : \'/etc/passwd\',\n    })\n    .argv\n;\n````\n\nis the same as\n\n````javascript\nvar argv = require(\'optimist\')\n    .alias(\'f\', \'file\')\n    .default(\'f\', \'/etc/passwd\')\n    .argv\n;\n````\n\nOptionally `.options()` can take an object that maps keys to `opt` parameters.\n\n.usage(message)\n---------------\n\nSet a usage message to show which commands to use. Inside `message`, the string\n`$0` will get interpolated to the current script name or node command for the\npresent script similar to how `$0` works in bash or perl.\n\n.check(fn)\n----------\n\nCheck that certain conditions are met in the provided arguments.\n\nIf `fn` throws or returns `false`, show the thrown error, usage information, and\nexit.\n\n.boolean(key)\n-------------\n\nInterpret `key` as a boolean. If a non-flag option follows `key` in\n`process.argv`, that string won\'t get set as the value of `key`.\n\nIf `key` never shows up as a flag in `process.arguments`, `argv[key]` will be\n`false`.\n\nIf `key` is an Array, interpret all the elements as booleans.\n\n.string(key)\n------------\n\nTell the parser logic not to interpret `key` as a number or boolean.\nThis can be useful if you need to preserve leading zeros in an input.\n\nIf `key` is an Array, interpret all the elements as strings.\n\n.wrap(columns)\n--------------\n\nFormat usage output to wrap at `columns` many columns.\n\n.help()\n-------\n\nReturn the generated usage string.\n\n.showHelp(fn=console.error)\n---------------------------\n\nPrint the usage data using `fn` for printing.\n\n.parse(args)\n------------\n\nParse `args` instead of `process.argv`. Returns the `argv` object.\n\n.argv\n-----\n\nGet the arguments as a plain old object.\n\nArguments without a corresponding flag show up in the `argv._` array.\n\nThe script name or node command is available at `argv.$0` similarly to how `$0`\nworks in bash or perl.\n\nparsing tricks\n==============\n\nstop parsing\n------------\n\nUse `--` to stop parsing flags and stuff the remainder into `argv._`.\n\n    $ node examples/reflect.js -a 1 -b 2 -- -c 3 -d 4\n    { _: [ \'-c\', \'3\', \'-d\', \'4\' ],\n      \'$0\': \'node ./examples/reflect.js\',\n      a: 1,\n      b: 2 }\n\nnegate fields\n-------------\n\nIf you want to explicity set a field to false instead of just leaving it\nundefined or to override a default you can do `--no-key`.\n\n    $ node examples/reflect.js -a --no-b\n    { _: [],\n      \'$0\': \'node ./examples/reflect.js\',\n      a: true,\n      b: false }\n\nnumbers\n-------\n\nEvery argument that looks like a number (`!isNaN(Number(arg))`) is converted to\none. This way you can just `net.createConnection(argv.port)` and you can add\nnumbers out of `argv` with `+` without having that mean concatenation,\nwhich is super frustrating.\n\nduplicates\n----------\n\nIf you specify a flag multiple times it will get turned into an array containing\nall the values in order.\n\n    $ node examples/reflect.js -x 5 -x 8 -x 0\n    { _: [],\n      \'$0\': \'node ./examples/reflect.js\',\n        x: [ 5, 8, 0 ] }\n\ndot notation\n------------\n\nWhen you use dots (`.`s) in argument names, an implicit object path is assumed.\nThis lets you organize arguments into nested objects.\n\n     $ node examples/reflect.js --foo.bar.baz=33 --foo.quux=5\n     { _: [],\n       \'$0\': \'node ./examples/reflect.js\',\n         foo: { bar: { baz: 33 }, quux: 5 } }\n\ninstallation\n============\n\nWith [npm](http://github.com/isaacs/npm), just do:\n    npm install optimist\n \nor clone this project on github:\n\n    git clone http://github.com/substack/node-optimist.git\n\nTo run the tests with [expresso](http://github.com/visionmedia/expresso),\njust do:\n    \n    expresso\n\ninspired By\n===========\n\nThis module is loosely inspired by Perl\'s\n[Getopt::Casual](http://search.cpan.org/~photo/Getopt-Casual-0.13.1/Casual.pm).\n',
+194 silly install resolved     readmeFilename: 'readme.markdown',
+194 silly install resolved     bugs: { url: 'https://github.com/substack/node-optimist/issues' },
+194 silly install resolved     homepage: 'https://github.com/substack/node-optimist',
+194 silly install resolved     _id: 'optimist@0.3.7',
+194 silly install resolved     _from: 'optimist@>=0.3.4 <0.4.0' },
+194 silly install resolved   { name: 'bindings',
+194 silly install resolved     description: 'Helper module for loading your native module\'s bindings in a cross-platform way',
+194 silly install resolved     keywords: [ 'native', 'addon', 'bindings', 'gyp' ],
+194 silly install resolved     version: '0.3.0',
+194 silly install resolved     author:
+194 silly install resolved      { name: 'Nathan Rajlich',
+194 silly install resolved        email: 'nathan@tootallnate.net',
+194 silly install resolved        url: 'http://tootallnate.net' },
+194 silly install resolved     repository:
+194 silly install resolved      { type: 'git',
+194 silly install resolved        url: 'git://github.com/TooTallNate/node-bindings.git' },
+194 silly install resolved     main: './bindings.js',
+194 silly install resolved     engines: { node: '*' },
+194 silly install resolved     _npmUser: { name: 'TooTallNate', email: 'nathan@tootallnate.net' },
+194 silly install resolved     _id: 'bindings@0.3.0',
+194 silly install resolved     dependencies: {},
+194 silly install resolved     devDependencies: {},
+194 silly install resolved     optionalDependencies: {},
+194 silly install resolved     _engineSupported: true,
+194 silly install resolved     _npmVersion: '1.1.1',
+194 silly install resolved     _nodeVersion: 'v0.6.11',
+194 silly install resolved     _defaultsLoaded: true,
+194 silly install resolved     dist:
+194 silly install resolved      { shasum: '2d01b7061ca312c6600c9b512404fd3ef99c06f3',
+194 silly install resolved        tarball: 'https://registry.npmjs.org/bindings/-/bindings-0.3.0.tgz' },
+194 silly install resolved     maintainers: [ [Object] ],
+194 silly install resolved     directories: {},
+194 silly install resolved     _shasum: '2d01b7061ca312c6600c9b512404fd3ef99c06f3',
+194 silly install resolved     _resolved: 'https://registry.npmjs.org/bindings/-/bindings-0.3.0.tgz',
+194 silly install resolved     _from: 'bindings@0.3.0',
+194 silly install resolved     bugs: { url: 'https://github.com/TooTallNate/node-bindings/issues' },
+194 silly install resolved     readme: 'ERROR: No README data found!',
+194 silly install resolved     homepage: 'https://github.com/TooTallNate/node-bindings#readme' },
+194 silly install resolved   { name: 'async',
+194 silly install resolved     description: 'Higher-order functions and common patterns for asynchronous code',
+194 silly install resolved     main: './index',
+194 silly install resolved     author: { name: 'Caolan McMahon' },
+194 silly install resolved     version: '0.1.18',
+194 silly install resolved     repository: { type: 'git', url: 'git://github.com/caolan/async.git' },
+194 silly install resolved     bugs: { url: 'http://github.com/caolan/async/issues' },
+194 silly install resolved     licenses: [ [Object] ],
+194 silly install resolved     devDependencies: { nodeunit: '>0.0.0', 'uglify-js': '1.2.x', nodelint: '>0.0.0' },
+194 silly install resolved     _npmUser: { name: 'caolan', email: 'caolan@caolanmcmahon.com' },
+194 silly install resolved     _id: 'async@0.1.18',
+194 silly install resolved     dependencies: {},
+194 silly install resolved     optionalDependencies: {},
+194 silly install resolved     engines: { node: '*' },
+194 silly install resolved     _engineSupported: true,
+194 silly install resolved     _npmVersion: '1.1.1',
+194 silly install resolved     _nodeVersion: 'v0.6.11',
+194 silly install resolved     _defaultsLoaded: true,
+194 silly install resolved     dist:
+194 silly install resolved      { shasum: 'c59c923920b76d5bf23248c04433920c4d45086a',
+194 silly install resolved        tarball: 'https://registry.npmjs.org/async/-/async-0.1.18.tgz' },
+194 silly install resolved     maintainers: [ [Object] ],
+194 silly install resolved     directories: {},
+194 silly install resolved     _shasum: 'c59c923920b76d5bf23248c04433920c4d45086a',
+194 silly install resolved     _resolved: 'https://registry.npmjs.org/async/-/async-0.1.18.tgz',
+194 silly install resolved     _from: 'async@0.1.18',
+194 silly install resolved     readme: '# Async.js\n\nAsync is a utility module which provides straight-forward, powerful functions\nfor working with asynchronous JavaScript. Although originally designed for\nuse with [node.js](http://nodejs.org), it can also be used directly in the\nbrowser.\n\nAsync provides around 20 functions that include the usual \'functional\'\nsuspects (map, reduce, filter, forEach…) as well as some common patterns\nfor asynchronous control flow (parallel, series, waterfall…). All these\nfunctions assume you follow the node.js convention of providing a single\ncallback as the last argument of your async function.\n\n\n## Quick Examples\n\n    async.map([\'file1\',\'file2\',\'file3\'], fs.stat, function(err, results){\n        // results is now an array of stats for each file\n    });\n\n    async.filter([\'file1\',\'file2\',\'file3\'], path.exists, function(results){\n        // results now equals an array of the existing files\n    });\n\n    async.parallel([\n        function(){ ... },\n        function(){ ... }\n    ], callback);\n\n    async.series([\n        function(){ ... },\n        function(){ ... }\n    ]);\n\nThere are many more functions available so take a look at the docs below for a\nfull list. This module aims to be comprehensive, so if you feel anything is\nmissing please create a GitHub issue for it.\n\n\n## Download\n\nReleases are available for download from\n[GitHub](http://github.com/caolan/async/downloads).\nAlternatively, you can install using Node Package Manager (npm):\n\n    npm install async\n\n\n__Development:__ [async.js](https://github.com/caolan/async/raw/master/lib/async.js) - 17.5kb Uncompressed\n\n__Production:__ [async.min.js](https://github.com/caolan/async/raw/master/dist/async.min.js) - 1.7kb Packed and Gzipped\n\n\n## In the Browser\n\nSo far its been tested in IE6, IE7, IE8, FF3.6 and Chrome 5. Usage:\n\n    <script type="text/javascript" src="async.js"></script>\n    <script type="text/javascript">\n\n        async.map(data, asyncProcess, function(err, results){\n            alert(results);\n        });\n\n    </script>\n\n\n## Documentation\n\n### Collections\n\n* [forEach](#forEach)\n* [map](#map)\n* [filter](#filter)\n* [reject](#reject)\n* [reduce](#reduce)\n* [detect](#detect)\n* [sortBy](#sortBy)\n* [some](#some)\n* [every](#every)\n* [concat](#concat)\n\n### Control Flow\n\n* [series](#series)\n* [parallel](#parallel)\n* [whilst](#whilst)\n* [until](#until)\n* [waterfall](#waterfall)\n* [queue](#queue)\n* [auto](#auto)\n* [iterator](#iterator)\n* [apply](#apply)\n* [nextTick](#nextTick)\n\n### Utils\n\n* [memoize](#memoize)\n* [unmemoize](#unmemoize)\n* [log](#log)\n* [dir](#dir)\n* [noConflict](#noConflict)\n\n\n## Collections\n\n<a name="forEach" />\n### forEach(arr, iterator, callback)\n\nApplies an iterator function to each item in an array, in parallel.\nThe iterator is called with an item from the list and a callback for when it\nhas finished. If the iterator passes an error to this callback, the main\ncallback for the forEach function is immediately called with the error.\n\nNote, that since this function applies the iterator to each item in parallel\nthere is no guarantee that the iterator functions will complete in order.\n\n__Arguments__\n\n* arr - An array to iterate over.\n* iterator(item, callback) - A function to apply to each item in the array.\n  The iterator is passed a callback which must be called once it has completed.\n* callback(err) - A callback which is called after all the iterator functions\n  have finished, or an error has occurred.\n\n__Example__\n\n    // assuming openFiles is an array of file names and saveFile is a function\n    // to save the modified contents of that file:\n\n    async.forEach(openFiles, saveFile, function(err){\n        // if any of the saves produced an error, err would equal that error\n    });\n\n---------------------------------------\n\n<a name="forEachSeries" />\n### forEachSeries(arr, iterator, callback)\n\nThe same as forEach only the iterator is applied to each item in the array in\nseries. The next iterator is only called once the current one has completed\nprocessing. This means the iterator functions will complete in order.\n\n\n---------------------------------------\n\n<a name="forEachLimit" />\n### forEachLimit(arr, limit, iterator, callback)\n\nThe same as forEach only the iterator is applied to batches of items in the\narray, in series. The next batch of iterators is only called once the current\none has completed processing.\n\n__Arguments__\n\n* arr - An array to iterate over.\n* limit - How many items should be in each batch.\n* iterator(item, callback) - A function to apply to each item in the array.\n  The iterator is passed a callback which must be called once it has completed.\n* callback(err) - A callback which is called after all the iterator functions\n  have finished, or an error has occurred.\n\n__Example__\n\n    // Assume documents is an array of JSON objects and requestApi is a\n    // function that interacts with a rate-limited REST api.\n\n    async.forEachLimit(documents, 20, requestApi, function(err){\n        // if any of the saves produced an error, err would equal that error\n    });\n---------------------------------------\n\n<a name="map" />\n### map(arr, iterator, callback)\n\nProduces a new array of values by mapping each value in the given array through\nthe iterator function. The iterator is called with an item from the array and a\ncallback for when it has finished processing. The callback takes 2 arguments, \nan error and the transformed item from the array. If the iterator passes an\nerror to this callback, the main callback for the map function is immediately\ncalled with the error.\n\nNote, that since this function applies the iterator to each item in parallel\nthere is no guarantee that the iterator functions will complete in order, however\nthe results array will be in the same order as the original array.\n\n__Arguments__\n\n* arr - An array to iterate over.\n* iterator(item, callback) - A function to apply to each item in the array.\n  The iterator is passed a callback which must be called once it has completed\n  with an error (which can be null) and a transformed item.\n* callback(err, results) - A callback which is called after all the iterator\n  functions have finished, or an error has occurred. Results is an array of the\n  transformed items from the original array.\n\n__Example__\n\n    async.map([\'file1\',\'file2\',\'file3\'], fs.stat, function(err, results){\n        // results is now an array of stats for each file\n    });\n\n---------------------------------------\n\n<a name="mapSeries" />\n### mapSeries(arr, iterator, callback)\n\nThe same as map only the iterator is applied to each item in the array in\nseries. The next iterator is only called once the current one has completed\nprocessing. The results array will be in the same order as the original.\n\n\n---------------------------------------\n\n<a name="filter" />\n### filter(arr, iterator, callback)\n\n__Alias:__ select\n\nReturns a new array of all the values which pass an async truth test.\n_The callback for each iterator call only accepts a single argument of true or\nfalse, it does not accept an error argument first!_ This is in-line with the\nway node libraries work with truth tests like path.exists. This operation is\nperformed in parallel, but the results array will be in the same order as the\noriginal.\n\n__Arguments__\n\n* arr - An array to iterate over.\n* iterator(item, callback) - A truth test to apply to each item in the array.\n  The iterator is passed a callback which must be called once it has completed.\n* callback(results) - A callback which is called after all the iterator\n  functions have finished.\n\n__Example__\n\n    async.filter([\'file1\',\'file2\',\'file3\'], path.exists, function(results){\n        // results now equals an array of the existing files\n    });\n\n---------------------------------------\n\n<a name="filterSeries" />\n### filterSeries(arr, iterator, callback)\n\n__alias:__ selectSeries\n\nThe same as filter only the iterator is applied to each item in the array in\nseries. The next iterator is only called once the current one has completed\nprocessing. The results array will be in the same order as the original.\n\n---------------------------------------\n\n<a name="reject" />\n### reject(arr, iterator, callback)\n\nThe opposite of filter. Removes values that pass an async truth test.\n\n---------------------------------------\n\n<a name="rejectSeries" />\n### rejectSeries(arr, iterator, callback)\n\nThe same as filter, only the iterator is applied to each item in the array\nin series.\n\n\n---------------------------------------\n\n<a name="reduce" />\n### reduce(arr, memo, iterator, callback)\n\n__aliases:__ inject, foldl\n\nReduces a list of values into a single value using an async iterator to return\neach successive step. Memo is the initial state of the reduction. This\nfunction only operates in series. For performance reasons, it may make sense to\nsplit a call to this function into a parallel map, then use the normal\nArray.prototype.reduce on the results. This function is for situations where\neach step in the reduction needs to be async, if you can get the data before\nreducing it then its probably a good idea to do so.\n\n__Arguments__\n\n* arr - An array to iterate over.\n* memo - The initial state of the reduction.\n* iterator(memo, item, callback) - A function applied to each item in the\n  array to produce the next step in the reduction. The iterator is passed a\n  callback which accepts an optional error as its first argument, and the state\n  of the reduction as the second. If an error is passed to the callback, the\n  reduction is stopped and the main callback is immediately called with the\n  error.\n* callback(err, result) - A callback which is called after all the iterator\n  functions have finished. Result is the reduced value.\n\n__Example__\n\n    async.reduce([1,2,3], 0, function(memo, item, callback){\n        // pointless async:\n        process.nextTick(function(){\n            callback(null, memo + item)\n        });\n    }, function(err, result){\n        // result is now equal to the last value of memo, which is 6\n    });\n\n---------------------------------------\n\n<a name="reduceRight" />\n### reduceRight(arr, memo, iterator, callback)\n\n__Alias:__ foldr\n\nSame as reduce, only operates on the items in the array in reverse order.\n\n\n---------------------------------------\n\n<a name="detect" />\n### detect(arr, iterator, callback)\n\nReturns the first value in a list that passes an async truth test. The\niterator is applied in parallel, meaning the first iterator to return true will\nfire the detect callback with that result. That means the result might not be\nthe first item in the original array (in terms of order) that passes the test.\n\nIf order within the original array is important then look at detectSeries.\n\n__Arguments__\n\n* arr - An array to iterate over.\n* iterator(item, callback) - A truth test to apply to each item in the array.\n  The iterator is passed a callback which must be called once it has completed.\n* callback(result) - A callback which is called as soon as any iterator returns\n  true, or after all the iterator functions have finished. Result will be\n  the first item in the array that passes the truth test (iterator) or the\n  value undefined if none passed.\n\n__Example__\n\n    async.detect([\'file1\',\'file2\',\'file3\'], path.exists, function(result){\n        // result now equals the first file in the list that exists\n    });\n\n---------------------------------------\n\n<a name="detectSeries" />\n### detectSeries(arr, iterator, callback)\n\nThe same as detect, only the iterator is applied to each item in the array\nin series. This means the result is always the first in the original array (in\nterms of array order) that passes the truth test.\n\n\n---------------------------------------\n\n<a name="sortBy" />\n### sortBy(arr, iterator, callback)\n\nSorts a list by the results of running each value through an async iterator.\n\n__Arguments__\n\n* arr - An array to iterate over.\n* iterator(item, callback) - A function to apply to each item in the array.\n  The iterator is passed a callback which must be called once it has completed\n  with an error (which can be null) and a value to use as the sort criteria.\n* callback(err, results) - A callback which is called after all the iterator\n  functions have finished, or an error has occurred. Results is the items from\n  the original array sorted by the values returned by the iterator calls.\n\n__Example__\n\n    async.sortBy([\'file1\',\'file2\',\'file3\'], function(file, callback){\n        fs.stat(file, function(err, stats){\n            callback(err, stats.mtime);\n        });\n    }, function(err, results){\n        // results is now the original array of files sorted by\n        // modified date\n    });\n\n\n---------------------------------------\n\n<a name="some" />\n### some(arr, iterator, callback)\n\n__Alias:__ any\n\nReturns true if at least one element in the array satisfies an async test.\n_The callback for each iterator call only accepts a single argument of true or\nfalse, it does not accept an error argument first!_ This is in-line with the\nway node libraries work with truth tests like path.exists. Once any iterator\ncall returns true, the main callback is immediately called.\n\n__Arguments__\n\n* arr - An array to iterate over.\n* iterator(item, callback) - A truth test to apply to each item in the array.\n  The iterator is passed a callback which must be called once it has completed.\n* callback(result) - A callback which is called as soon as any iterator returns\n  true, or after all the iterator functions have finished. Result will be\n  either true or false depending on the values of the async tests.\n\n__Example__\n\n    async.some([\'file1\',\'file2\',\'file3\'], path.exists, function(result){\n        // if result is true then at least one of the files exists\n    });\n\n---------------------------------------\n\n<a name="every" />\n### every(arr, iterator, callback)\n\n__Alias:__ all\n\nReturns true if every element in the array satisfies an async test.\n_The callback for each iterator call only accepts a single argument of true or\nfalse, it does not accept an error argument first!_ This is in-line with the\nway node libraries work with truth tests like path.exists.\n\n__Arguments__\n\n* arr - An array to iterate over.\n* iterator(item, callback) - A truth test to apply to each item in the array.\n  The iterator is passed a callback which must be called once it has completed.\n* callback(result) - A callback which is called after all the iterator\n  functions have finished. Result will be either true or false depending on\n  the values of the async tests.\n\n__Example__\n\n    async.every([\'file1\',\'file2\',\'file3\'], path.exists, function(result){\n        // if result is true then every file exists\n    });\n\n---------------------------------------\n\n<a name="concat" />\n### concat(arr, iterator, callback)\n\nApplies an iterator to each item in a list, concatenating the results. Returns the\nconcatenated list. The iterators are called in parallel, and the results are\nconcatenated as they return. There is no guarantee that the results array will\nbe returned in the original order of the arguments passed to the iterator function.\n\n__Arguments__\n\n* arr - An array to iterate over\n* iterator(item, callback) - A function to apply to each item in the array.\n  The iterator is passed a callback which must be called once it has completed\n  with an error (which can be null) and an array of results.\n* callback(err, results) - A callback which is called after all the iterator\n  functions have finished, or an error has occurred. Results is an array containing\n  the concatenated results of the iterator function.\n\n__Example__\n\n    async.concat([\'dir1\',\'dir2\',\'dir3\'], fs.readdir, function(err, files){\n        // files is now a list of filenames that exist in the 3 directories\n    });\n\n---------------------------------------\n\n<a name="concatSeries" />\n### concatSeries(arr, iterator, callback)\n\nSame as async.concat, but executes in series instead of parallel.\n\n\n## Control Flow\n\n<a name="series" />\n### series(tasks, [callback])\n\nRun an array of functions in series, each one running once the previous\nfunction has completed. If any functions in the series pass an error to its\ncallback, no more functions are run and the callback for the series is\nimmediately called with the value of the error. Once the tasks have completed,\nthe results are passed to the final callback as an array.\n\nIt is also possible to use an object instead of an array. Each property will be\nrun as a function and the results will be passed to the final callback as an object\ninstead of an array. This can be a more readable way of handling results from\nasync.series.\n\n\n__Arguments__\n\n* tasks - An array or object containing functions to run, each function is passed\n  a callback it must call on completion.\n* callback(err, results) - An optional callback to run once all the functions\n  have completed. This function gets an array of all the arguments passed to\n  the callbacks used in the array.\n\n__Example__\n\n    async.series([\n        function(callback){\n            // do some stuff ...\n            callback(null, \'one\');\n        },\n        function(callback){\n            // do some more stuff ...\n            callback(null, \'two\');\n        },\n    ],\n    // optional callback\n    function(err, results){\n        // results is now equal to [\'one\', \'two\']\n    });\n\n\n    // an example using an object instead of an array\n    async.series({\n        one: function(callback){\n            setTimeout(function(){\n                callback(null, 1);\n            }, 200);\n        },\n        two: function(callback){\n            setTimeout(function(){\n                callback(null, 2);\n            }, 100);\n        },\n    },\n    function(err, results) {\n        // results is now equal to: {one: 1, two: 2}\n    });\n\n\n---------------------------------------\n\n<a name="parallel" />\n### parallel(tasks, [callback])\n\nRun an array of functions in parallel, without waiting until the previous\nfunction has completed. If any of the functions pass an error to its\ncallback, the main callback is immediately called with the value of the error.\nOnce the tasks have completed, the results are passed to the final callback as an\narray.\n\nIt is also possible to use an object instead of an array. Each property will be\nrun as a function and the results will be passed to the final callback as an object\ninstead of an array. This can be a more readable way of handling results from\nasync.parallel.\n\n\n__Arguments__\n\n* tasks - An array or object containing functions to run, each function is passed a\n  callback it must call on completion.\n* callback(err, results) - An optional callback to run once all the functions\n  have completed. This function gets an array of all the arguments passed to\n  the callbacks used in the array.\n\n__Example__\n\n    async.parallel([\n        function(callback){\n            setTimeout(function(){\n                callback(null, \'one\');\n            }, 200);\n        },\n        function(callback){\n            setTimeout(function(){\n                callback(null, \'two\');\n            }, 100);\n        },\n    ],\n    // optional callback\n    function(err, results){\n        // in this case, the results array will equal [\'two\',\'one\']\n        // because the functions were run in parallel and the second\n        // function had a shorter timeout before calling the callback.\n    });\n\n\n    // an example using an object instead of an array\n    async.parallel({\n        one: function(callback){\n            setTimeout(function(){\n                callback(null, 1);\n            }, 200);\n        },\n        two: function(callback){\n            setTimeout(function(){\n                callback(null, 2);\n            }, 100);\n        },\n    },\n    function(err, results) {\n        // results is now equals to: {one: 1, two: 2}\n    });\n\n\n---------------------------------------\n\n<a name="whilst" />\n### whilst(test, fn, callback)\n\nRepeatedly call fn, while test returns true. Calls the callback when stopped,\nor an error occurs.\n\n__Arguments__\n\n* test() - synchronous truth test to perform before each execution of fn.\n* fn(callback) - A function to call each time the test passes. The function is\n  passed a callback which must be called once it has completed with an optional\n  error as the first argument.\n* callback(err) - A callback which is called after the test fails and repeated\n  execution of fn has stopped.\n\n__Example__\n\n    var count = 0;\n\n    async.whilst(\n        function () { return count < 5; },\n        function (callback) {\n            count++;\n            setTimeout(callback, 1000);\n        },\n        function (err) {\n            // 5 seconds have passed\n        }\n    );\n\n\n---------------------------------------\n\n<a name="until" />\n### until(test, fn, callback)\n\nRepeatedly call fn, until test returns true. Calls the callback when stopped,\nor an error occurs.\n\nThe inverse of async.whilst.\n\n\n---------------------------------------\n\n<a name="waterfall" />\n### waterfall(tasks, [callback])\n\nRuns an array of functions in series, each passing their results to the next in\nthe array. However, if any of the functions pass an error to the callback, the\nnext function is not executed and the main callback is immediately called with\nthe error.\n\n__Arguments__\n\n* tasks - An array of functions to run, each function is passed a callback it\n  must call on completion.\n* callback(err, [results]) - An optional callback to run once all the functions\n  have completed. This will be passed the results of the last task\'s callback.\n\n\n\n__Example__\n\n    async.waterfall([\n        function(callback){\n            callback(null, \'one\', \'two\');\n        },\n        function(arg1, arg2, callback){\n            callback(null, \'three\');\n        },\n        function(arg1, callback){\n            // arg1 now equals \'three\'\n            callback(null, \'done\');\n        }\n    ], function (err, result) {\n       // result now equals \'done\'    \n    });\n\n\n---------------------------------------\n\n<a name="queue" />\n### queue(worker, concurrency)\n\nCreates a queue object with the specified concurrency. Tasks added to the\nqueue will be processed in parallel (up to the concurrency limit). If all\nworkers are in progress, the task is queued until one is available. Once\na worker has completed a task, the task\'s callback is called.\n\n__Arguments__\n\n* worker(task, callback) - An asynchronous function for processing a queued\n  task.\n* concurrency - An integer for determining how many worker functions should be\n  run in parallel.\n\n__Queue objects__\n\nThe queue object returned by this function has the following properties and\nmethods:\n\n* length() - a function returning the number of items waiting to be processed.\n* concurrency - an integer for determining how many worker functions should be\n  run in parallel. This property can be changed after a queue is created to\n  alter the concurrency on-the-fly.\n* push(task, [callback]) - add a new task to the queue, the callback is called\n  once the worker has finished processing the task.\n  instead of a single task, an array of tasks can be submitted. the respective callback is used for every task in the list.\n* saturated - a callback that is called when the queue length hits the concurrency and further tasks will be queued\n* empty - a callback that is called when the last item from the queue is given to a worker\n* drain - a callback that is called when the last item from the queue has returned from the worker\n\n__Example__\n\n    // create a queue object with concurrency 2\n\n    var q = async.queue(function (task, callback) {\n        console.log(\'hello \' + task.name);\n        callback();\n    }, 2);\n\n\n    // assign a callback\n    q.drain = function() {\n        console.log(\'all items have been processed\');\n    }\n\n    // add some items to the queue\n\n    q.push({name: \'foo\'}, function (err) {\n        console.log(\'finished processing foo\');\n    });\n    q.push({name: \'bar\'}, function (err) {\n        console.log(\'finished processing bar\');\n    });\n\n    // add some items to the queue (batch-wise)\n\n    q.push([{name: \'baz\'},{name: \'bay\'},{name: \'bax\'}], function (err) {\n        console.log(\'finished processing bar\');\n    });\n\n\n---------------------------------------\n\n<a name="auto" />\n### auto(tasks, [callback])\n\nDetermines the best order for running functions based on their requirements.\nEach function can optionally depend on other functions being completed first,\nand each function is run as soon as its requirements are satisfied. If any of\nthe functions pass an error to their callback, that function will not complete\n(so any other functions depending on it will not run) and the main callback\nwill be called immediately with the error. Functions also receive an object\ncontaining the results of functions which have completed so far.\n\n__Arguments__\n\n* tasks - An object literal containing named functions or an array of\n  requirements, with the function itself the last item in the array. The key\n  used for each function or array is used when specifying requirements. The\n  syntax is easier to understand by looking at the example.\n* callback(err, results) - An optional callback which is called when all the\n  tasks have been completed. The callback will receive an error as an argument\n  if any tasks pass an error to their callback. If all tasks complete\n  successfully, it will receive an object containing their results.\n\n__Example__\n\n    async.auto({\n        get_data: function(callback){\n            // async code to get some data\n        },\n        make_folder: function(callback){\n            // async code to create a directory to store a file in\n            // this is run at the same time as getting the data\n        },\n        write_file: [\'get_data\', \'make_folder\', function(callback){\n            // once there is some data and the directory exists,\n            // write the data to a file in the directory\n            callback(null, filename);\n        }],\n        email_link: [\'write_file\', function(callback, results){\n            // once the file is written let\'s email a link to it...\n            // results.write_file contains the filename returned by write_file.\n        }]\n    });\n\nThis is a fairly trivial example, but to do this using the basic parallel and\nseries functions would look like this:\n\n    async.parallel([\n        function(callback){\n            // async code to get some data\n        },\n        function(callback){\n            // async code to create a directory to store a file in\n            // this is run at the same time as getting the data\n        }\n    ],\n    function(results){\n        async.series([\n            function(callback){\n                // once there is some data and the directory exists,\n                // write the data to a file in the directory\n            },\n            email_link: function(callback){\n                // once the file is written let\'s email a link to it...\n            }\n        ]);\n    });\n\nFor a complicated series of async tasks using the auto function makes adding\nnew tasks much easier and makes the code more readable.\n\n\n---------------------------------------\n\n<a name="iterator" />\n### iterator(tasks)\n\nCreates an iterator function which calls the next function in the array,\nreturning a continuation to call the next one after that. Its also possible to\n\'peek\' the next iterator by doing iterator.next().\n\nThis function is used internally by the async module but can be useful when\nyou want to manually control the flow of functions in series.\n\n__Arguments__\n\n* tasks - An array of functions to run, each function is passed a callback it\n  must call on completion.\n\n__Example__\n\n    var iterator = async.iterator([\n        function(){ sys.p(\'one\'); },\n        function(){ sys.p(\'two\'); },\n        function(){ sys.p(\'three\'); }\n    ]);\n\n    node> var iterator2 = iterator();\n    \'one\'\n    node> var iterator3 = iterator2();\n    \'two\'\n    node> iterator3();\n    \'three\'\n    node> var nextfn = iterator2.next();\n    node> nextfn();\n    \'three\'\n\n\n---------------------------------------\n\n<a name="apply" />\n### apply(function, arguments..)\n\nCreates a continuation function with some arguments already applied, a useful\nshorthand when combined with other control flow functions. Any arguments\npassed to the returned function are added to the arguments originally passed\nto apply.\n\n__Arguments__\n\n* function - The function you want to eventually apply all arguments to.\n* arguments... - Any number of arguments to automatically apply when the\n  continuation is called.\n\n__Example__\n\n    // using apply\n\n    async.parallel([\n        async.apply(fs.writeFile, \'testfile1\', \'test1\'),\n        async.apply(fs.writeFile, \'testfile2\', \'test2\'),\n    ]);\n\n\n    // the same process without using apply\n\n    async.parallel([\n        function(callback){\n            fs.writeFile(\'testfile1\', \'test1\', callback);\n        },\n        function(callback){\n            fs.writeFile(\'testfile2\', \'test2\', callback);\n        },\n    ]);\n\nIt\'s possible to pass any number of additional arguments when calling the\ncontinuation:\n\n    node> var fn = async.apply(sys.puts, \'one\');\n    node> fn(\'two\', \'three\');\n    one\n    two\n    three\n\n---------------------------------------\n\n<a name="nextTick" />\n### nextTick(callback)\n\nCalls the callback on a later loop around the event loop. In node.js this just\ncalls process.nextTick, in the browser it falls back to setTimeout(callback, 0),\nwhich means other higher priority events may precede the execution of the callback.\n\nThis is used internally for browser-compatibility purposes.\n\n__Arguments__\n\n* callback - The function to call on a later loop around the event loop.\n\n__Example__\n\n    var call_order = [];\n    async.nextTick(function(){\n        call_order.push(\'two\');\n        // call_order now equals [\'one\',\'two]\n    });\n    call_order.push(\'one\')\n\n\n## Utils\n\n<a name="memoize" />\n### memoize(fn, [hasher])\n\nCaches the results of an async function. When creating a hash to store function\nresults against, the callback is omitted from the hash and an optional hash\nfunction can be used.\n\n__Arguments__\n\n* fn - the function you to proxy and cache results from.\n* hasher - an optional function for generating a custom hash for storing\n  results, it has all the arguments applied to it apart from the callback, and\n  must be synchronous.\n\n__Example__\n\n    var slow_fn = function (name, callback) {\n        // do something\n        callback(null, result);\n    };\n    var fn = async.memoize(slow_fn);\n\n    // fn can now be used as if it were slow_fn\n    fn(\'some name\', function () {\n        // callback\n    });\n\n<a name="unmemoize" />\n### unmemoize(fn)\n\nUndoes a memoized function, reverting it to the original, unmemoized\nform. Comes handy in tests.\n\n__Arguments__\n\n* fn - the memoized function\n\n<a name="log" />\n### log(function, arguments)\n\nLogs the result of an async function to the console. Only works in node.js or\nin browsers that support console.log and console.error (such as FF and Chrome).\nIf multiple arguments are returned from the async function, console.log is\ncalled on each argument in order.\n\n__Arguments__\n\n* function - The function you want to eventually apply all arguments to.\n* arguments... - Any number of arguments to apply to the function.\n\n__Example__\n\n    var hello = function(name, callback){\n        setTimeout(function(){\n            callback(null, \'hello \' + name);\n        }, 1000);\n    };\n\n    node> async.log(hello, \'world\');\n    \'hello world\'\n\n\n---------------------------------------\n\n<a name="dir" />\n### dir(function, arguments)\n\nLogs the result of an async function to the console using console.dir to\ndisplay the properties of the resulting object. Only works in node.js or\nin browsers that support console.dir and console.error (such as FF and Chrome).\nIf multiple arguments are returned from the async function, console.dir is\ncalled on each argument in order.\n\n__Arguments__\n\n* function - The function you want to eventually apply all arguments to.\n* arguments... - Any number of arguments to apply to the function.\n\n__Example__\n\n    var hello = function(name, callback){\n        setTimeout(function(){\n            callback(null, {hello: name});\n        }, 1000);\n    };\n\n    node> async.dir(hello, \'world\');\n    {hello: \'world\'}\n\n\n---------------------------------------\n\n<a name="noConflict" />\n### noConflict()\n\nChanges the value of async back to its original value, returning a reference to the\nasync object.\n',
+194 silly install resolved     readmeFilename: 'README.md',
+194 silly install resolved     homepage: 'https://github.com/caolan/async#readme' } ]
+195 info install sf@0.1.3 into /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2
+196 info install optimist@0.3.7 into /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2
+197 info install bindings@0.3.0 into /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2
+198 info install async@0.1.18 into /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2
+199 info installOne sf@0.1.3
+200 verbose installOne of sf to /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2 not in flight; installing
+201 info installOne optimist@0.3.7
+202 verbose installOne of optimist to /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2 not in flight; installing
+203 info installOne bindings@0.3.0
+204 verbose installOne of bindings to /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2 not in flight; installing
+205 info installOne async@0.1.18
+206 verbose installOne of async to /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2 not in flight; installing
+207 verbose lock using /Users/francesco/.npm/_locks/sf-10c9e54e0b82f1be.lock for /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/sf
+208 verbose lock using /Users/francesco/.npm/_locks/bindings-8365d4bd8d31feea.lock for /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/bindings
+209 silly install write writing sf 0.1.3 to /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/sf
+210 silly install write writing bindings 0.3.0 to /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/bindings
+211 verbose lock using /Users/francesco/.npm/_locks/async-5edaf42689377ef5.lock for /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/async
+212 verbose lock using /Users/francesco/.npm/_locks/optimist-3a0a47f221455ba9.lock for /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist
+213 silly install write writing async 0.1.18 to /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/async
+214 silly install write writing optimist 0.3.7 to /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist
+215 verbose unbuild node_modules/serialport2/node_modules/sf
+216 verbose unbuild node_modules/serialport2/node_modules/bindings
+217 verbose unbuild node_modules/serialport2/node_modules/async
+218 verbose unbuild node_modules/serialport2/node_modules/optimist
+219 silly gentlyRm /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/sf is being purged from base /Users/francesco/DEV/ROBOT/node_robot
+220 verbose gentlyRm don't care about contents; nuking /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/sf
+221 silly gentlyRm /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/bindings is being purged from base /Users/francesco/DEV/ROBOT/node_robot
+222 verbose gentlyRm don't care about contents; nuking /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/bindings
+223 verbose tar unpack /Users/francesco/.npm/sf/0.1.3/package.tgz
+224 verbose tar unpacking to /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/sf
+225 silly gentlyRm /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/sf is being purged
+226 verbose gentlyRm don't care about contents; nuking /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/sf
+227 verbose tar unpack /Users/francesco/.npm/bindings/0.3.0/package.tgz
+228 verbose tar unpacking to /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/bindings
+229 silly gentlyRm /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/bindings is being purged
+230 verbose gentlyRm don't care about contents; nuking /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/bindings
+231 silly gentlyRm /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/async is being purged from base /Users/francesco/DEV/ROBOT/node_robot
+232 verbose gentlyRm don't care about contents; nuking /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/async
+233 silly gentlyRm /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist is being purged from base /Users/francesco/DEV/ROBOT/node_robot
+234 verbose gentlyRm don't care about contents; nuking /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist
+235 silly gunzTarPerm modes [ '755', '644' ]
+236 silly gunzTarPerm modes [ '755', '644' ]
+237 verbose tar unpack /Users/francesco/.npm/async/0.1.18/package.tgz
+238 verbose tar unpacking to /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/async
+239 silly gentlyRm /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/async is being purged
+240 verbose gentlyRm don't care about contents; nuking /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/async
+241 verbose tar unpack /Users/francesco/.npm/optimist/0.3.7/package.tgz
+242 verbose tar unpacking to /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist
+243 silly gentlyRm /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist is being purged
+244 verbose gentlyRm don't care about contents; nuking /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist
+245 silly gunzTarPerm modes [ '755', '644' ]
+246 silly gunzTarPerm modes [ '755', '644' ]
+247 silly gunzTarPerm extractEntry .npmignore
+248 silly gunzTarPerm extractEntry bindings.js
+249 silly gunzTarPerm extractEntry README.md
+250 silly gunzTarPerm extractEntry package.json
+251 silly gunzTarPerm extractEntry README.md
+252 silly gunzTarPerm extractEntry lib/
+253 silly gunzTarPerm extractEntry package.json
+254 silly gunzTarPerm extractEntry README.md
+255 silly gunzTarPerm extractEntry LICENSE
+256 silly gunzTarPerm extractEntry index.js
+257 silly gunzTarPerm extractEntry index.js
+258 silly gunzTarPerm extractEntry lib/stringFormat.js
+259 silly gunzTarPerm extractEntry .idea/
+260 silly gunzTarPerm extractEntry .idea/.name
+261 silly gunzTarPerm extractEntry test/
+262 silly gunzTarPerm extractEntry test/stringFormatTest.js
+263 silly gunzTarPerm extractEntry test/indentTest.js
+264 silly gunzTarPerm extractEntry package.json
+265 silly gunzTarPerm extractEntry index.js
+266 silly gunzTarPerm extractEntry .travis.yml
+267 silly gunzTarPerm extractEntry .npmignore
+268 silly gunzTarPerm extractEntry Makefile
+269 silly gunzTarPerm extractEntry package.json
+270 silly gunzTarPerm extractEntry lib/
+271 silly gunzTarPerm extractEntry example/bool.js
+272 silly gunzTarPerm extractEntry example/default_singles.js
+273 silly gunzTarPerm extractEntry lib/async.js
+274 silly gunzTarPerm extractEntry LICENSE
+275 silly gunzTarPerm extractEntry example/divide.js
+276 silly gunzTarPerm extractEntry example/line_count.js
+277 verbose write writing to /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/bindings/package.json
+278 info preinstall bindings@0.3.0
+279 silly gunzTarPerm extractEntry .gitmodules
+280 silly gunzTarPerm extractEntry example/default_hash.js
+281 silly gunzTarPerm extractEntry example/line_count_wrap.js
+282 verbose readDependencies loading dependencies from /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/bindings/package.json
+283 verbose readDependencies loading dependencies from /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/bindings/package.json
+284 silly gunzTarPerm extractEntry example/nonopt.js
+285 silly gunzTarPerm extractEntry example/reflect.js
+286 silly install resolved []
+287 verbose about to build /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/bindings
+288 info build /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/bindings
+289 info linkStuff bindings@0.3.0
+290 silly linkStuff bindings@0.3.0 has /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules as its parent node_modules
+291 silly gunzTarPerm extractEntry example/short.js
+292 silly gunzTarPerm extractEntry example/string.js
+293 silly gunzTarPerm extractEntry example/boolean_single.js
+294 silly gunzTarPerm extractEntry example/usage-options.js
+295 verbose linkBins bindings@0.3.0
+296 verbose linkMans bindings@0.3.0
+297 verbose rebuildBundles bindings@0.3.0
+298 info install bindings@0.3.0
+299 info postinstall bindings@0.3.0
+300 verbose unlock done using /Users/francesco/.npm/_locks/bindings-8365d4bd8d31feea.lock for /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/bindings
+301 silly gunzTarPerm extractEntry example/boolean_double.js
+302 silly gunzTarPerm extractEntry example/xup.js
+303 silly gunzTarPerm extractEntry example/line_count_options.js
+304 silly gunzTarPerm extractEntry readme.markdown
+305 verbose write writing to /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/async/package.json
+306 silly gunzTarPerm extractEntry test/_.js
+307 silly gunzTarPerm extractEntry test/parse.js
+308 verbose write writing to /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/sf/package.json
+309 info preinstall async@0.1.18
+310 verbose readDependencies loading dependencies from /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/async/package.json
+311 info preinstall sf@0.1.3
+312 silly gunzTarPerm extractEntry test/usage.js
+313 silly gunzTarPerm extractEntry test/_/argv.js
+314 verbose readDependencies loading dependencies from /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/sf/package.json
+315 verbose readDependencies loading dependencies from /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/async/package.json
+316 verbose readDependencies loading dependencies from /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/sf/package.json
+317 silly gunzTarPerm extractEntry test/_/bin.js
+318 silly install resolved []
+319 verbose about to build /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/async
+320 info build /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/async
+321 silly install resolved []
+322 verbose about to build /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/sf
+323 info build /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/sf
+324 info linkStuff async@0.1.18
+325 silly linkStuff async@0.1.18 has /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules as its parent node_modules
+326 info linkStuff sf@0.1.3
+327 silly linkStuff sf@0.1.3 has /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules as its parent node_modules
+328 verbose linkBins async@0.1.18
+329 verbose linkMans async@0.1.18
+330 verbose rebuildBundles async@0.1.18
+331 info install async@0.1.18
+332 info postinstall async@0.1.18
+333 verbose linkBins sf@0.1.3
+334 verbose linkMans sf@0.1.3
+335 verbose rebuildBundles sf@0.1.3
+336 info install sf@0.1.3
+337 verbose unlock done using /Users/francesco/.npm/_locks/async-5edaf42689377ef5.lock for /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/async
+338 info postinstall sf@0.1.3
+339 verbose unlock done using /Users/francesco/.npm/_locks/sf-10c9e54e0b82f1be.lock for /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/sf
+340 verbose write writing to /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist/package.json
+341 info preinstall optimist@0.3.7
+342 verbose readDependencies loading dependencies from /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist/package.json
+343 silly prepareForInstallMany adding wordwrap@~0.0.2 from optimist dependencies
+344 verbose readDependencies loading dependencies from /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist/package.json
+345 silly cache add args [ 'wordwrap@~0.0.2', null ]
+346 verbose cache add spec wordwrap@~0.0.2
+347 silly cache add parsed spec Result {
+347 silly cache add   raw: 'wordwrap@~0.0.2',
+347 silly cache add   scope: null,
+347 silly cache add   name: 'wordwrap',
+347 silly cache add   rawSpec: '~0.0.2',
+347 silly cache add   spec: '>=0.0.2 <0.1.0',
+347 silly cache add   type: 'range' }
+348 silly addNamed wordwrap@>=0.0.2 <0.1.0
+349 verbose addNamed ">=0.0.2 <0.1.0" is a valid semver range for wordwrap
+350 silly addNameRange { name: 'wordwrap', range: '>=0.0.2 <0.1.0', hasData: false }
+351 silly mapToRegistry name wordwrap
+352 silly mapToRegistry using default registry
+353 silly mapToRegistry registry https://registry.npmjs.org/
+354 silly mapToRegistry uri https://registry.npmjs.org/wordwrap
+355 verbose addNameRange registry:https://registry.npmjs.org/wordwrap not in flight; fetching
+356 verbose request uri https://registry.npmjs.org/wordwrap
+357 verbose request no auth needed
+358 info attempt registry request try #1 at 16:29:00
+359 verbose etag "569DKQBV6UAUGE684ZCXW002L"
+360 http request GET https://registry.npmjs.org/wordwrap
+361 http 304 https://registry.npmjs.org/wordwrap
+362 verbose headers { date: 'Tue, 04 Oct 2016 14:29:01 GMT',
+362 verbose headers   via: '1.1 varnish',
+362 verbose headers   'cache-control': 'max-age=300',
+362 verbose headers   etag: '"569DKQBV6UAUGE684ZCXW002L"',
+362 verbose headers   age: '160',
+362 verbose headers   connection: 'keep-alive',
+362 verbose headers   'x-served-by': 'cache-fra1239-FRA',
+362 verbose headers   'x-cache': 'HIT',
+362 verbose headers   'x-cache-hits': '14',
+362 verbose headers   'x-timer': 'S1475591341.017704,VS0,VE0',
+362 verbose headers   vary: 'Accept-Encoding' }
+363 silly get cb [ 304,
+363 silly get   { date: 'Tue, 04 Oct 2016 14:29:01 GMT',
+363 silly get     via: '1.1 varnish',
+363 silly get     'cache-control': 'max-age=300',
+363 silly get     etag: '"569DKQBV6UAUGE684ZCXW002L"',
+363 silly get     age: '160',
+363 silly get     connection: 'keep-alive',
+363 silly get     'x-served-by': 'cache-fra1239-FRA',
+363 silly get     'x-cache': 'HIT',
+363 silly get     'x-cache-hits': '14',
+363 silly get     'x-timer': 'S1475591341.017704,VS0,VE0',
+363 silly get     vary: 'Accept-Encoding' } ]
+364 verbose etag https://registry.npmjs.org/wordwrap from cache
+365 verbose get saving wordwrap to /Users/francesco/.npm/registry.npmjs.org/wordwrap/.cache.json
+366 silly addNameRange number 2 { name: 'wordwrap', range: '>=0.0.2 <0.1.0', hasData: true }
+367 silly addNameRange versions [ 'wordwrap', [ '0.0.1', '0.0.2', '0.0.3', '1.0.0' ] ]
+368 silly addNamed wordwrap@0.0.3
+369 verbose addNamed "0.0.3" is a plain semver version for wordwrap
+370 silly cache afterAdd wordwrap@0.0.3
+371 verbose afterAdd /Users/francesco/.npm/wordwrap/0.0.3/package/package.json not in flight; writing
+372 verbose afterAdd /Users/francesco/.npm/wordwrap/0.0.3/package/package.json written
+373 silly install resolved [ { name: 'wordwrap',
+373 silly install resolved     description: 'Wrap those words. Show them at what columns to start and stop.',
+373 silly install resolved     version: '0.0.3',
+373 silly install resolved     repository:
+373 silly install resolved      { type: 'git',
+373 silly install resolved        url: 'git://github.com/substack/node-wordwrap.git' },
+373 silly install resolved     main: './index.js',
+373 silly install resolved     keywords: [ 'word', 'wrap', 'rule', 'format', 'column' ],
+373 silly install resolved     directories: { lib: '.', example: 'example', test: 'test' },
+373 silly install resolved     scripts: { test: 'expresso' },
+373 silly install resolved     devDependencies: { expresso: '=0.7.x' },
+373 silly install resolved     engines: { node: '>=0.4.0' },
+373 silly install resolved     license: 'MIT',
+373 silly install resolved     author:
+373 silly install resolved      { name: 'James Halliday',
+373 silly install resolved        email: 'mail@substack.net',
+373 silly install resolved        url: 'http://substack.net' },
+373 silly install resolved     gitHead: 'e59aa1bd338914019456bdfba034508c9c4cb29d',
+373 silly install resolved     bugs: { url: 'https://github.com/substack/node-wordwrap/issues' },
+373 silly install resolved     homepage: 'https://github.com/substack/node-wordwrap#readme',
+373 silly install resolved     _id: 'wordwrap@0.0.3',
+373 silly install resolved     _shasum: 'a3d5da6cd5c0bc0008d37234bbaf1bed63059107',
+373 silly install resolved     _from: 'wordwrap@>=0.0.2 <0.1.0',
+373 silly install resolved     _npmVersion: '2.9.0',
+373 silly install resolved     _nodeVersion: '2.0.0',
+373 silly install resolved     _npmUser: { name: 'substack', email: 'substack@gmail.com' },
+373 silly install resolved     dist:
+373 silly install resolved      { shasum: 'a3d5da6cd5c0bc0008d37234bbaf1bed63059107',
+373 silly install resolved        tarball: 'http://registry.npmjs.org/wordwrap/-/wordwrap-0.0.3.tgz' },
+373 silly install resolved     maintainers: [ [Object] ],
+373 silly install resolved     _resolved: 'https://registry.npmjs.org/wordwrap/-/wordwrap-0.0.3.tgz',
+373 silly install resolved     readme: 'ERROR: No README data found!' } ]
+374 info install wordwrap@0.0.3 into /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist
+375 info installOne wordwrap@0.0.3
+376 verbose installOne of wordwrap to /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist not in flight; installing
+377 verbose lock using /Users/francesco/.npm/_locks/wordwrap-b8e805a0e6f507d7.lock for /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist/node_modules/wordwrap
+378 silly install write writing wordwrap 0.0.3 to /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist/node_modules/wordwrap
+379 verbose unbuild node_modules/serialport2/node_modules/optimist/node_modules/wordwrap
+380 silly gentlyRm /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist/node_modules/wordwrap is being purged from base /Users/francesco/DEV/ROBOT/node_robot
+381 verbose gentlyRm don't care about contents; nuking /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist/node_modules/wordwrap
+382 verbose tar unpack /Users/francesco/.npm/wordwrap/0.0.3/package.tgz
+383 verbose tar unpacking to /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist/node_modules/wordwrap
+384 silly gentlyRm /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist/node_modules/wordwrap is being purged
+385 verbose gentlyRm don't care about contents; nuking /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist/node_modules/wordwrap
+386 silly gunzTarPerm modes [ '755', '644' ]
+387 silly gunzTarPerm extractEntry package.json
+388 silly gunzTarPerm extractEntry LICENSE
+389 silly gunzTarPerm extractEntry index.js
+390 silly gunzTarPerm extractEntry README.markdown
+391 silly gunzTarPerm extractEntry example/center.js
+392 silly gunzTarPerm extractEntry example/meat.js
+393 silly gunzTarPerm extractEntry test/break.js
+394 silly gunzTarPerm extractEntry test/wrap.js
+395 silly gunzTarPerm extractEntry test/idleness.txt
+396 verbose write writing to /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist/node_modules/wordwrap/package.json
+397 info preinstall wordwrap@0.0.3
+398 verbose readDependencies loading dependencies from /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist/node_modules/wordwrap/package.json
+399 verbose readDependencies loading dependencies from /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist/node_modules/wordwrap/package.json
+400 silly install resolved []
+401 verbose about to build /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist/node_modules/wordwrap
+402 info build /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist/node_modules/wordwrap
+403 info linkStuff wordwrap@0.0.3
+404 silly linkStuff wordwrap@0.0.3 has /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist/node_modules as its parent node_modules
+405 verbose linkBins wordwrap@0.0.3
+406 verbose linkMans wordwrap@0.0.3
+407 verbose rebuildBundles wordwrap@0.0.3
+408 info install wordwrap@0.0.3
+409 info postinstall wordwrap@0.0.3
+410 verbose unlock done using /Users/francesco/.npm/_locks/wordwrap-b8e805a0e6f507d7.lock for /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist/node_modules/wordwrap
+411 verbose about to build /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist
+412 info build /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist
+413 info linkStuff optimist@0.3.7
+414 silly linkStuff optimist@0.3.7 has /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules as its parent node_modules
+415 verbose linkBins optimist@0.3.7
+416 verbose linkMans optimist@0.3.7
+417 verbose rebuildBundles optimist@0.3.7
+418 verbose rebuildBundles [ 'wordwrap' ]
+419 info install optimist@0.3.7
+420 info postinstall optimist@0.3.7
+421 verbose unlock done using /Users/francesco/.npm/_locks/optimist-3a0a47f221455ba9.lock for /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2/node_modules/optimist
+422 verbose about to build /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2
+423 info build /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2
+424 info linkStuff serialport2@0.0.5
+425 silly linkStuff serialport2@0.0.5 has /Users/francesco/DEV/ROBOT/node_robot/node_modules as its parent node_modules
+426 verbose linkBins serialport2@0.0.5
+427 verbose link bins [ { serialportlist: './bin/serialportList.js',
+427 verbose link bins     serialportterm: './bin/serialportTerminal.js' },
+427 verbose link bins   '/Users/francesco/DEV/ROBOT/node_robot/node_modules/.bin',
+427 verbose link bins   false ]
+428 verbose linkMans serialport2@0.0.5
+429 verbose rebuildBundles serialport2@0.0.5
+430 verbose rebuildBundles [ 'async', 'bindings', 'optimist', 'sf' ]
+431 silly gentlyRm /Users/francesco/DEV/ROBOT/node_robot/node_modules/.bin/serialportlist is being purged
+432 verbose gentlyRm don't care about contents; nuking /Users/francesco/DEV/ROBOT/node_robot/node_modules/.bin/serialportlist
+433 silly gentlyRm /Users/francesco/DEV/ROBOT/node_robot/node_modules/.bin/serialportterm is being purged
+434 verbose gentlyRm don't care about contents; nuking /Users/francesco/DEV/ROBOT/node_robot/node_modules/.bin/serialportterm
+435 info install serialport2@0.0.5
+436 verbose unsafe-perm in lifecycle true
+437 info serialport2@0.0.5 Failed to exec install script
+438 verbose unlock done using /Users/francesco/.npm/_locks/serialport2-561caead11610f33.lock for /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2
+439 verbose stack Error: serialport2@0.0.5 install: `node-gyp rebuild`
+439 verbose stack Exit status 1
+439 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:214:16)
+439 verbose stack     at emitTwo (events.js:87:13)
+439 verbose stack     at EventEmitter.emit (events.js:172:7)
+439 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+439 verbose stack     at emitTwo (events.js:87:13)
+439 verbose stack     at ChildProcess.emit (events.js:172:7)
+439 verbose stack     at maybeClose (internal/child_process.js:818:16)
+439 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+440 verbose pkgid serialport2@0.0.5
+441 verbose cwd /Users/francesco/DEV/ROBOT/node_robot
+442 error Darwin 14.5.0
+443 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "--save" "serialport2"
+444 error node v4.2.4
+445 error npm  v2.14.12
+446 error code ELIFECYCLE
+447 error serialport2@0.0.5 install: `node-gyp rebuild`
+447 error Exit status 1
+448 error Failed at the serialport2@0.0.5 install script 'node-gyp rebuild'.
+448 error This is most likely a problem with the serialport2 package,
+448 error not with npm itself.
+448 error Tell the author that this fails on your system:
+448 error     node-gyp rebuild
+448 error You can get their info via:
+448 error     npm owner ls serialport2
+448 error There is likely additional logging output above.
+449 verbose exit [ 1, true ]
+450 verbose unbuild node_modules/serialport2
+451 info preuninstall serialport2@0.0.5
+452 info uninstall serialport2@0.0.5
+453 verbose unbuild rmStuff serialport2@0.0.5 from /Users/francesco/DEV/ROBOT/node_robot/node_modules
+454 silly gentlyRm /Users/francesco/DEV/ROBOT/node_robot/node_modules/.bin/serialportlist is being gently removed
+455 silly gentlyRm verifying /Users/francesco/DEV/ROBOT/node_robot is an npm working directory
+456 silly gentlyRm /Users/francesco/DEV/ROBOT/node_robot/node_modules/.bin/serialportterm is being gently removed
+457 silly gentlyRm verifying /Users/francesco/DEV/ROBOT/node_robot is an npm working directory
+458 silly gentlyRm containing path /Users/francesco/DEV/ROBOT/node_robot is under npm's control, in /Users/francesco/DEV/ROBOT/node_robot
+459 silly gentlyRm deletion target /Users/francesco/DEV/ROBOT/node_robot/node_modules/.bin/serialportlist is under /Users/francesco/DEV/ROBOT/node_robot
+460 verbose gentlyRm vacuuming from /Users/francesco/DEV/ROBOT/node_robot/node_modules/.bin/serialportlist up to /Users/francesco/DEV/ROBOT/node_robot
+461 silly gentlyRm containing path /Users/francesco/DEV/ROBOT/node_robot is under npm's control, in /Users/francesco/DEV/ROBOT/node_robot
+462 silly gentlyRm deletion target /Users/francesco/DEV/ROBOT/node_robot/node_modules/.bin/serialportterm is under /Users/francesco/DEV/ROBOT/node_robot
+463 verbose gentlyRm vacuuming from /Users/francesco/DEV/ROBOT/node_robot/node_modules/.bin/serialportterm up to /Users/francesco/DEV/ROBOT/node_robot
+464 silly vacuum-fs removing /Users/francesco/DEV/ROBOT/node_robot/node_modules/.bin/serialportlist
+465 silly vacuum-fs removing /Users/francesco/DEV/ROBOT/node_robot/node_modules/.bin/serialportterm
+466 silly vacuum-fs quitting because other entries in /Users/francesco/DEV/ROBOT/node_robot/node_modules/.bin
+467 silly vacuum-fs quitting because other entries in /Users/francesco/DEV/ROBOT/node_robot/node_modules/.bin
+468 info postuninstall serialport2@0.0.5
+469 silly gentlyRm /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2 is being purged from base /Users/francesco/DEV/ROBOT/node_robot
+470 verbose gentlyRm don't care about contents; nuking /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2
+471 silly vacuum-fs purging /Users/francesco/DEV/ROBOT/node_robot/node_modules/serialport2
+472 silly vacuum-fs quitting because other entries in /Users/francesco/DEV/ROBOT/node_robot/node_modules

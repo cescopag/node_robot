@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script type="text/javascript" src="nes.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<style type="text/css">
+	* { -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+	body { text-align:center; font-family:"Arial"; background:#222; color:#fff; }
+	p { color:#888; }
+	.virtual_keyboard { display:block; width:300px; height:200px; margin:0 auto; }
+	.key_up, .key_left, .key_down, .key_right { width:80px; height:80px; line-height:80px; border:0; margin:5px; background:#333; text-align:center; font-size:30px; border-radius:8px; }
+	.key_active { background:#555; color:#f66; }
+	section { padding:0px; height:100px; display:none; }
+	section img { width:100px; }
+	
+	.auto, .stop { padding:0 20px; height:40px; line-height:40px; border:0; margin:5px; background:#333; text-align:center; font-size:20px; border-radius:8px; }
+
+	#range { font-size:12px; font-family:"Arial"; color:#3a3; margin:10px 0; display:block; }
+	#range.warning { color:#f00; }
+	#range-meter { height:20px; background:#000; text-align:center; width:200px; margin:10px auto; overflow:hidden; border-radius:2px; }
+	#range-meter-bar { display:inline-block; height:20px; width:0; background:#555; margin:0; border-radius:2px; }
+	#range-meter.warning { background:#400; }
+	#range-meter.warning #range-meter-bar { background:#f00; }
+</style>
+</head>
+<body>
+
+<h1>Node Robot</h1>
+<p>Use your arrows to move the robot!</p>
+
+<code id="range"></code>
+
+<div id="range-meter">
+	<div id="range-meter-bar"></div>
+</div>
+
+<div class="virtual_keyboard">
+	<button class="key_up">&uarr;</button><br />
+	<button class="key_left">&larr;</button>
+	<button class="key_down">&darr;</button>
+	<button class="key_right">&rarr;</button>
+</div>
+
+<p>
+    <button class="auto">Auto</button>
+    <button class="stop">Stop</button>
+</p>
+
+<pre id="logs"></pre>
+
+
+<script type="text/javascript">
+var prev;
+var url = window.location.href.replace('index.html','').replace('8080/','8080');
+
+function _up() {
+	if (prev == 'up') return;
+	prev = 'up';
+	$('.key_up').addClass('key_active');
+	$.post(url + '/forward');
+}
+
+function _left() {
+	if (prev == 'left') return;
+	prev = 'left';
+	$('.key_left').addClass('key_active');
+	$.post(url + '/left');
+}
+
+function _down() {
+	if (prev == 'down') return;
+	prev = 'down';
+	$('.key_down').addClass('key_active');
+	$.post(url + '/reverse');
+}
+
+function _right() {
+	if (prev == 'right') return;
+	prev = 'right';
+	$('.key_right').addClass('key_active');
+	$.post(url + '/right');
+}
+
+function _stop() {
+	prev = null;
+	$('.key_active').removeClass('key_active');
+	$.post(url + '/stop');
+}
+
+function _auto() {
+	prev = null;
+	$('.key_active').removeClass('key_active');
+	$.post(url + '/auto');
+}
+
+
+$('.key_up').on('mousedown touchstart', function(e) {
+	e.preventDefault();
+	_up();
+});
+
+$('.key_left').on('mousedown touchstart', function(e) {
+	e.preventDefault();
+	_left();
+});
+
+$('.key_down').on('mousedown touchstart', function(e) {
+	e.preventDefault();
+	_down();
+});
+
+$('.key_right').on('mousedown touchstart', function(e) {
+	e.preventDefault();
+	_right();
+});
+
+$('.virtual_keyboard').on('mouseup touchend', function(e) {
+	e.preventDefault();
+	_stop();
+});
+
+$('.auto').on('mousedown touchstart', function() {
+    _auto();
+});
+
+$('.stop').on('mousedown touchstart', function() {
+    _stop();
+});
+
+$('body').on('keyup', function(e) {
+	e.preventDefault();
+	_stop();
+});
+
+$('body').on('keydown', function(e) {
+	switch(e.which) {
+		case 38:
+			_up();
+		break;
+		case 37:
+			_left();
+		break;
+		case 40:
+			_down();
+		break;
+		case 39:
+			_right();
+		break;
+	}
+});
+
+var client = new nes.Client(url.replace('http','ws'));
+
+client.connect(function (err) {
+    client.subscribe('/radar', function (update) {
+		$('#range').html(update.toFixed(2) + " cm");
+		var width = parseFloat(update) / 500 * $('#range-meter').width();
+		$('#range-meter-bar').width(width);
+		if (update < 50) {
+			$('#range,#range-meter').addClass('warning');
+		} else {
+			$('#range,#range-meter').removeClass('warning');
+		}
+    });
+    
+    client.subscribe('/log', function (update) {
+		$('#logs').html(update);		
+    });
+});
+</script>
+</body>
+</html>

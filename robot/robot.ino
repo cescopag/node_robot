@@ -55,14 +55,14 @@ void loop() {
       break;
     case 'a':
       Serial.println("Turning left...");
-      motorL(-1, 255);
-      motorR(1, 255);
+      motorL(0, 0);
+      motorR(1, 128);
       autopilot = 0;
       break;
     case 'd':
       Serial.println("Turning right...");
-      motorL(1, 255);
-      motorR(-1, 255);
+      motorL(1, 128);
+      motorR(0, 0);
       autopilot = 0;
       break;
     case 'x':
@@ -73,8 +73,8 @@ void loop() {
       break;
     case 'i':
       Serial.println("Autopilot ON!");
-      motorL(1, 255);
-      motorR(1, 255);
+      motorL(1, 128);
+      motorR(1, 128);
       autopilot = 1;
       break;
     case 'r':
@@ -98,14 +98,14 @@ void loop() {
 //------------------------------------------------------------------------------
 void runAutopilot() {
   cm = dist();
-  if (cm < 10) {
+  if (cm < 20) {
     //obstacle, turn around
-    motorL(1, 128);
+    motorL(-1, 0);
     motorR(-1, 128);
   } else {
     //no more obstacles, go ahead
-    motorL(1, 255);
-    motorR(1, 255);
+    motorL(1, 128);
+    motorR(1, 128);
   }
 }
 

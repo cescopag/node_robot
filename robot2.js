@@ -8,15 +8,15 @@ var port = new SerialPort('/dev/tty.arduino-DevB', {
 var hapi = require('hapi');
 var inert = require('inert');
 var nes = require('nes');
-
 var ready = false;
-
-port.on('open', start);
 
 var motorA, motorB;
 var air = 0;
 
 var server = new hapi.Server();
+
+port.on('open', start);
+
 server.connection({
 	port: 8080,
 	routes: { cors: true }
@@ -45,7 +45,7 @@ server.register([nes, inert], function() {
 		path: '/forward',
 		handler: function(req,reply) {
 			console.log('forward');
-			port.write('w');
+			ready && port.write('w');
 			reply(200);
 		}
 	});
@@ -55,7 +55,7 @@ server.register([nes, inert], function() {
 		path: '/left',
 		handler: function(req,reply) {
 			console.log('left');
-			port.write('a');
+			ready && port.write('a');
 			reply(200);
 		}
 	});
@@ -65,7 +65,7 @@ server.register([nes, inert], function() {
 		path: '/right',
 		handler: function(req,reply) {
 			console.log('right');
-			port.write('d');
+			ready && port.write('d');
 			reply(200);
 		}
 	});
@@ -75,7 +75,7 @@ server.register([nes, inert], function() {
 		path: '/reverse',
 		handler: function(req,reply) {
 			console.log('reverse');
-			port.write('s');
+			ready && port.write('s');
 			reply(200);
 		}
 	});
@@ -85,7 +85,7 @@ server.register([nes, inert], function() {
 		path: '/stop',
 		handler: function(req,reply) {
 			console.log('stop');
-			port.write('x');
+			ready && port.write('x');
 			reply(200);
 		}
 	});
@@ -95,7 +95,7 @@ server.register([nes, inert], function() {
 		path: '/auto',
 		handler: function(req,reply) {
 			console.log('auto');
-			port.write('i');
+			ready && port.write('i');
 			reply(200);
 		}
 	});
@@ -109,7 +109,7 @@ server.register([nes, inert], function() {
 	    }
 	    console.log('Server running at:', server.info.uri);
 	    setInterval(function() {
-			if (ready) port.write('r');
+			ready && port.write('r');
 			server.publish('/radar', air);
 		}, 250);
 	});

@@ -21,24 +21,23 @@
 	.key_active { background:#fff; color:#000; }
 	.stop { background:#600; color:#caa; }
 
-	#range { font-size:12px; font-family:"Arial"; color:#3a3; margin:10px 0; display:block; }
+	#range { font-size:10px; font-family:monospace; color:#ccc; margin:0; display:block; position:absolute; top:0; left:0; right:0; bottom:0; line-height:20px; }
 	#range.warning { color:#f00; }
-	#range-meter { height:20px; background:#000; text-align:center; width:200px; margin:10px auto; overflow:hidden; border-radius:2px; }
+	#range-meter { height:20px; background:#000; text-align:center; width:200px; margin:10px auto; overflow:hidden; border-radius:2px; position:relative; }
 	#range-meter-bar { display:inline-block; height:20px; width:0; background:#555; margin:0; border-radius:2px; }
-	#range-meter.warning { background:#400; }
-	#range-meter.warning #range-meter-bar { background:#f00; }
+	#range-meter.warning { background:#200; }
+	#range-meter.warning #range-meter-bar { background:#700; }
 
-	pre { color:#6c6; padding:5px; border:1px solid #444; border-radius:5px; background:#000; font-size:10px; line-height:1em; }
+	pre { color:#6c6; font-family:monospace; padding:5px; border:1px solid #444; border-radius:5px; background:#000; font-size:10px; line-height:1em; }
 </style>
 </head>
 <body>
 
 <p>Use your arrows to move the robot</p>
 
-<code id="range"></code>
-
 <div id="range-meter">
 	<div id="range-meter-bar"></div>
+	<code id="range"></code>
 </div>
 
 <div class="virtual_keyboard">
@@ -144,10 +143,10 @@ var client = new nes.Client(url.replace('http','ws'));
 
 client.connect(function (err) {
     client.subscribe('/radar', function (update) {
-		$('#range').html(update.toFixed(2) + " cm");
-		var width = parseFloat(update) / 500 * $('#range-meter').width();
+		$('#range').html(update.toFixed(0) + " cm");
+		var width = parseFloat(update) / 200 * $('#range-meter').width();
 		$('#range-meter-bar').width(width);
-		if (update < 50) {
+		if (update < 20) {
 			$('#range,#range-meter').addClass('warning');
 		} else {
 			$('#range,#range-meter').removeClass('warning');
@@ -157,7 +156,7 @@ client.connect(function (err) {
 	//get log messages from
     client.subscribe('/log', function (update) {
 		$('#logs').html(update);
-    });
+    });    
 });
 </script>
 </body>

@@ -1,10 +1,15 @@
 var SerialPort = require('serialport');
+
 var port = new SerialPort('/dev/tty.arduino-DevB', {
-	parser: SerialPort.parsers.readline('\n')
+	parser: SerialPort.parsers.readline('\n'),
+	baudRate: 57600
 });
+
 var hapi = require('hapi');
 var inert = require('inert');
 var nes = require('nes');
+
+var ready = false;
 
 port.on('open', start);
 
@@ -84,7 +89,7 @@ server.register([nes, inert], function() {
 			reply(200);
 		}
 	});
-	
+
 	server.route({
 		method: 'POST',
 		path: '/auto',
@@ -104,8 +109,9 @@ server.register([nes, inert], function() {
 	    }
 	    console.log('Server running at:', server.info.uri);
 	    setInterval(function() {
+			if (ready) port.write('r');
 			server.publish('/radar', air);
-		}, 500);
+		}, 250);
 	});
 
 });
@@ -113,6 +119,7 @@ server.register([nes, inert], function() {
 function start() {
 
 	console.log('Ready!');
+	ready = true;
 
 	port.on('data', function(data) {
 	    //if I'm receiving centimeters, parse them and set air value
@@ -120,8 +127,8 @@ function start() {
 	        air = parseFloat(data.replace('cm', ''));
 	    } else {
     	    //Log messages
-	    	console.log(data);
-	    	server.publish('/log', message);
+			console.log(data);
+	    	server.publish('/log', data);
 	    }
 	});
 

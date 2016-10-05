@@ -19,7 +19,7 @@ const int distancePin = 7;
 // MAIN SETUP
 //------------------------------------------------------------------------------
 void setup() {
-  Serial.begin(9600); //opens serial port, sets data rate to 9600 bps
+  Serial.begin(57600);
 
   pinMode(motorL_pos, OUTPUT);
   pinMode(motorL_neg, OUTPUT);
@@ -77,13 +77,18 @@ void loop() {
       motorR(1, 255);
       autopilot = 1;
       break;
+    case 'r':
+      cm = dist();
+      Serial.print(cm);
+      Serial.println("cm");
+      break;
   }
 
   //Autopilot
   if (autopilot == 1) {
     runAutopilot();
   }
-  
+
   //Reduce the loop time
   delay(10);
 }
@@ -95,12 +100,10 @@ void runAutopilot() {
   cm = dist();
   if (cm < 10) {
     //obstacle, turn around
-    Serial.println("Obstacle detected, turning around...");
     motorL(1, 128);
     motorR(-1, 128);
   } else {
     //no more obstacles, go ahead
-    Serial.println("Direction is clear, proceed!");
     motorL(1, 255);
     motorR(1, 255);
   }
@@ -175,4 +178,3 @@ long dist() {
   distance = (duration / 2) / 29.1; // convert the distance to centimeters.
   return distance;
 }
-

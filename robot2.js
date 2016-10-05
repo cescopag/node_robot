@@ -9,8 +9,7 @@ var hapi = require('hapi');
 var inert = require('inert');
 var nes = require('nes');
 var ready = false;
-
-var motorA, motorB;
+var ready2 = false;
 var air = 0;
 
 var server = new hapi.Server();
@@ -104,6 +103,7 @@ server.register([nes, inert], function() {
     server.subscription('/log');
 
 	server.start(function(err){
+		ready2 = true;
 	    if (err) {
 	        throw err;
 	    }
@@ -118,8 +118,10 @@ server.register([nes, inert], function() {
 
 function start() {
 
-	console.log('Ready!');
 	ready = true;
+
+	console.log('Serial port is Ready!');
+	ready2 && server.publish('/log', 'Connected.');
 
 	port.on('data', function(data) {
 	    //if I'm receiving centimeters, parse them and set air value
@@ -128,7 +130,7 @@ function start() {
 	    } else {
     	    //Log messages
 			console.log(data);
-	    	server.publish('/log', data);
+	    	ready2 && server.publish('/log', data);
 	    }
 	});
 
